@@ -1,17 +1,15 @@
 > If you encounter an error with the Jupyter Notebook on GitHub, please use the following links below:<br>
 > [Survival Analysis Notebook](https://nbviewer.org/github/Agungvpzz/Survival-Analysis/blob/main/Survival%20Analysis.ipynb) <br>
 
-# Telco-Churn-Analysis
+# Telco-Survival-Analysis
 
 ## 1. Introduction
-In this repository, I will conduct churn analysis using Python and Plotly for interactive data visualization. The analysis will include examining the correlation of all features with the target variable 'Churn,' assessing the composition of categorical features relative to churn, and evaluating the distribution of numerical features relative to churn. Furthermore, I will perform statistical analysis and predictive modeling using logistic regression and XGBoost algorithms.
+In this repository, I will conduct survival analysis using Python, utilizing Plotly for interactive data visualization. The analysis will include exploratory data analysis, survival function estimation using the Kaplan-Meier method, and hazard modeling with the Cox Proportional Hazards model via CoxPHFitter from the lifelines package. Additionally, I will improve the model's accuracy by integrating XGBoost predictions while ensuring that both survival target variables—Churn and Tenure—are fairly excluded.
 
 ## 2. Business Understanding
 ### A. Business Goals
 
-
 ### B. Objective of this analysis
-
 
 ### C. Key Questions to Answer
 
