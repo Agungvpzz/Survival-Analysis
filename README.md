@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a5a8e8e6-0471-47d3-942b-06cc20555b98)![image](https://github.com/user-attachments/assets/243cb6d9-2858-4a73-bbc6-7ba311653cdb)> If you encounter an error with the Jupyter Notebook on GitHub, please use the following links below:<br>
+> If you encounter an error with the Jupyter Notebook on GitHub, please use the following links below:<br>
 > [Survival Analysis Notebook](https://nbviewer.org/github/Agungvpzz/Survival-Analysis/blob/main/Survival%20Analysis.ipynb) <br>
 
 # Telco-Churn-Survival-Analysis
