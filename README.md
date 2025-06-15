@@ -20,9 +20,8 @@ The primary goal of this analysis is to understand customer behavior over time a
 ### C. Key Questions to Answer
 1. What is the estimated survival probability of customers over different time periods?
 2. Which factors have the strongest impact on customer churn risk?
-3. How do survival trends vary across customer segments?
-4. Can predictive modeling improve the accuracy of churn risk estimation?
-5. How can businesses optimize retention strategies based on survival analysis findings?
+3. Can predictive modeling improve the accuracy of churn risk estimation?
+4. How can businesses optimize retention strategies based on survival analysis findings?
 
 ## 3. Data Understanding
 - The dataset can be explored and downloaded with the following link [telco-customer-churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn/data).
@@ -158,6 +157,9 @@ Grouping features below allows for clear churn comparisons among unique values w
 
 #### Feature Coefficients: Displays the coefficient values for each covariate in the Cox Proportional Hazards model.
 ![image](https://github.com/user-attachments/assets/842e2407-118e-4f88-a989-9cd77eb003c8)<br>
+- A positive coefficient indicates that the covariate increases the risk of churn (customers are more likely to leave sooner).
+- A negative coefficient suggests that the covariate reduces the risk of churn (customers are more likely to stay longer).
+- A coefficient near zero means the covariate has minimal impact on churn.
 
 #### Plot Time-Dependent ROC Curve: Evaluates the CoxPH model’s accuracy in predicting time to churn using a time-dependent AUC curve.
 ![image](https://github.com/user-attachments/assets/49423dfa-8073-476c-b617-dbd6cfa0e3ee)
@@ -177,9 +179,10 @@ Example with the first 10 customers
 
 ## 8. Conclusion
 
-### Survival Analysis Report
+### Survival Analysis
+The survival function curve shows how different values within a feature depict the significant different curve among them. 
 
-### Hazard Predictive Modeling Report
+### Hazard Predictive Modeling
 
 
 
