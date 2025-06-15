@@ -31,8 +31,9 @@ The primary goal of this analysis is to understand customer behavior over time a
 ## 4. Methodology
 ### A. Exploratory Data Analysis (EDA)
 1. Visualizing churn composition using a pie chart and analyzing churn distribution across tenure with a bar chart.
-2. Assessing feature relationships by calculating the Pearson correlation coefficient between each feature and churn, then visualizing the results with a bar chart.
-3. Evaluating categorical feature impact using chi-squared (χ²) tests to determine whether churn distributions differ significantly across unique category values.
+3. Assessing feature relationships by calculating the Pearson correlation coefficient between each feature and churn, then visualizing the results with a bar chart.
+4. Visualizing churn composition across unique values of all categorical features using a stacked bar chart.
+5. Evaluating categorical feature impact using chi-squared (χ²) tests to determine whether churn distributions differ significantly across unique category values.
 
 ### B. Survival Function Estimation using the Kaplan-Meier Method (Non-Parametric)
 1. Plotting the survival function curve along with its confidence interval using a line chart.
@@ -69,7 +70,14 @@ The primary goal of this analysis is to understand customer behavior over time a
 <div align=center>
 
   ![image](https://github.com/user-attachments/assets/0e880dc6-daab-408c-9a00-8a0f7858b6c7)
+  ![image](https://github.com/user-attachments/assets/c3151031-da88-47d5-9859-96a68777cde6)
+
 </div>
+
+### Comparison Across All Categorical Features in Relation to Churn
+We can clearly compare each value across all categorical features with the help of this barplot below.
+![compairson_across_categorical_features](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/139e8945-b03f-4cad-b43a-421310db135e)
+
 
 ### Features Correlation Against Churn
 Feature correlation in the following barplot informs us how each feature correlates to customer churn behaviour.
@@ -79,67 +87,57 @@ Grouping features below allows for clear churn comparisons among unique values w
 ![corr_churn_features_grouped](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/89748da4-5922-443f-8b67-fdab2e8af5f2)
 
 
-### Comparison Across All Categorical Features in Relation to Churn
-We can clearly compare each value across all categorical features with the help of this barplot below.
-![compairson_across_categorical_features](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/139e8945-b03f-4cad-b43a-421310db135e)
+## Survival Function Estimation
+### Survival Function Curve
+![image](https://github.com/user-attachments/assets/dd2e19fa-dd26-4305-bd81-3907c51dc596)
 
-### Churn Comparison Within Unique Values of Each Feature
-- Each feature underwent chi-squared testing to evaluate churn comparisons among unique values
-- The subplots are ordered in decreasing order of chi-squared values
-- We can clearly identify churn value comparisons within unique values for each feature that significantly differ from other values.
+### Segmenting survival curves by masking based on each unique categorical feature value.
+![image](https://github.com/user-attachments/assets/2af3d3c1-46ed-4d2b-8904-d5154022c484)
 
-#### Demographics Features Values Comparison by Churn
-![categorical_features_demographics_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/3d974671-eeb4-4128-ad21-66f6d6936805)
-- As you can see above, only the 'Gender' feature does not have a significant p-value.
-- Customers without dependents are likely to churn.
-- Senior citizens tend to churn.
-- Customers without partners tend to churn.
-  
+## Hazard Modeling
+### Model Evaluation
+![image](https://github.com/user-attachments/assets/583504c0-ffb3-4ed8-8c6c-813dd6941078)
+<br>The survival model exhibits strong predictive performance with minimal overfitting, as shown by the following metrics:
+- Concordance Index (C-Index) & C-IndexC (Censored):
+    - Train: 0.9600
+    - Test: 0.9508
+    - High agreement between predicted and actual survival rankings, including censored cases.
+- Cumulative Dynamic AUC:
+    - Train: 0.9806
+    - Test: 0.9771
+    - Excellent discriminatory ability in time-dependent survival probability estimation.
+- The close alignment between train and test results highlights good generalization and model robustness for survival prediction.
 
-#### Payments Features Values Comparison by Churn
-![categorical_features_payments_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/be59ba31-fa1e-49f1-b88a-bc2bf88a5906)
-- Customers who have contracts month-to-month are likely to churn.
-- Customers with electronic check payment methods are likely to churn.
-- Customers using paperless billing tend to churn.
+### Model Comparison
+![image](https://github.com/user-attachments/assets/be3350ad-fc3b-47fa-876b-690ee1814af7)<br>
+- CoxPHFitter, CoxPHSurvivalAnalysis: Include all columns.
+- cph2, cphsk2: Exclude columns with an insignificant p-value (> 0.05).
+- cph3, cphsk3: Exclude columns with an insignificant logp value (< 10).
 
-#### Services Features Values Comparison by Churn
-![categorical_features_services_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/aeac8b1e-6778-4da5-a33d-a50ea9d5ff9d)
-- Customers who don't subscribe to an additional online security service are likely to churn.
-- Customers who don't subscribe to an additional tech support service are likely to churn.
-- Customers who subscribe to fiber optic internet service tend to churn.
-- Customers who don't subscribe to an additional online backup service are likely to churn.
-- Customers who don't subscribe to an additional device protection service are likely to churn.
-- Customers who didn't use their internet service to stream movies were likely to churn.
-- Customers who didn't use their internet service to stream TV were likely to churn.
-- Customers who subscribe to multiple telephone lines with the company tend to churn.
-- Overall, customers who didn't subscribe to an internet service tend to be loyal.
+### Model Visualization
+
+#### Feature Coefficients: Displays the coefficient values for each covariate in the Cox Proportional Hazards model.
+![image](https://github.com/user-attachments/assets/842e2407-118e-4f88-a989-9cd77eb003c8)<br>
+
+#### Plot Time-Dependent ROC Curve: Evaluates the CoxPH model’s accuracy in predicting time to churn using a time-dependent AUC curve.
+![image](https://github.com/user-attachments/assets/49423dfa-8073-476c-b617-dbd6cfa0e3ee)
+
+#### Plot Partial Effects on Outcome: Illustrates how within-group differences in covariate values influence the shape of the survival function.
+Example with Contract Covariate
+![image](https://github.com/user-attachments/assets/bc0c2856-e72b-4871-98e9-f56a8d3c8887)
+
+#### Plot Survival Function Curve Based on Hazard Quartiles: Assesses how well the model stratifies customers into risk groups (e.g., quartiles based on predicted hazard).
+![image](https://github.com/user-attachments/assets/f9c9ffdb-c958-4da1-88df-75817a913bfa)
 
 
-## Model Development
-### Model Performance Summary
+#### Plot Survival Function Curve for Time-to-Event Predictions: Compares the model’s predicted time-to-event outcomes against actual observations.
+Example with the first 10 customers
+![image](https://github.com/user-attachments/assets/cab139fe-77c6-48b9-9d59-8b5e00eabc49)
 
-
-### Model Evaluation and Interpretation
 
 ## 8. Conclusion
 
 ### Survival Analysis Report
-The exploratory data analysis reveals several critical factors contributing to customer churn. Customers who are more likely to churn typically share the following characteristics:
-- Payment Features:
-  - Contract Type: Customers with a month-to-month contract are at a significantly higher risk of churning compared to those with longer-term commitments.
-  - Payment methods: The electronic checks and paperless billing method, offer greater flexibility for customers. However, these methods have been identified as key drivers of customer churn.
-- Demographic Characteristics:
-    - Senior Citizens:
-        - Older customers, specifically those identified as Senior Citizens, exhibit a higher likelihood of churning.
-        - This may be due to factors such as changing service needs or financial considerations.
-    - Marital and Family Status:
-        - Single Customers (no partner) and have no dependents are more prone to churn.
-        - This demographic might be more mobile and less tied down, making them more open to switching providers.
-- Service Features:
-  - There are several intriguing features with chi-squared scores exceeding 500, indicating significant differences in preferences between churned and non-churned customers. However, deeper analysis beyond the chi-squared tests is limited due to insufficient detailed information on the pricing of each service.
-- Numerical Features:
-  - The Tenure and TotalCharges variables are directly correlated with churn, making them consequence features rather than causal factors. As a result, analyzing these features provides limited value. On the other hand, higher MonthlyCharges are associated with an increased likelihood of customer churn.
-
 
 ### Hazard Predictive Modeling Report
 
