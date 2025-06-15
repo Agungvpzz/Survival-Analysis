@@ -1,4 +1,4 @@
-> If you encounter an error with the Jupyter Notebook on GitHub, please use the following links below:<br>
+![image](https://github.com/user-attachments/assets/a5a8e8e6-0471-47d3-942b-06cc20555b98)![image](https://github.com/user-attachments/assets/243cb6d9-2858-4a73-bbc6-7ba311653cdb)> If you encounter an error with the Jupyter Notebook on GitHub, please use the following links below:<br>
 > [Survival Analysis Notebook](https://nbviewer.org/github/Agungvpzz/Survival-Analysis/blob/main/Survival%20Analysis.ipynb) <br>
 
 # Telco-Churn-Survival-Analysis
@@ -92,7 +92,47 @@ Grouping features below allows for clear churn comparisons among unique values w
 ![image](https://github.com/user-attachments/assets/dd2e19fa-dd26-4305-bd81-3907c51dc596)
 
 ### Segmenting survival curves by masking based on each unique categorical feature value.
-![image](https://github.com/user-attachments/assets/2af3d3c1-46ed-4d2b-8904-d5154022c484)
+
+#### All Features
+![image](https://github.com/user-attachments/assets/2af3d3c1-46ed-4d2b-8904-d5154022c484)<br>
+- Among all features, Contract feature has the highest Logrank score, that is 2352.9, with signifficant p-value.
+- Only Gender and PhoneService features doesn't have significant p-value (p > 0.05), with logrank score less than 1
+
+#### Socio-Demographic Features
+<div align=center>
+     
+![image](https://github.com/user-attachments/assets/bb91b34a-9782-4876-b537-c25a3128318e)
+![image](https://github.com/user-attachments/assets/52db90b9-b2bf-4106-b837-7f2d7c1e7741)
+</div>
+
+- The Partner feature shows a significant difference in survival probabilities.
+- Among all socio-demographic features, only Gender did not reach statistical significance.
+- Customers who have a partner, are not senior citizens, and live with dependents have the lowest churn rate, at only 13.75%.
+- Customers who have no partner, are senior citizens, and have no dependents exhibit the highest churn rate, approaching 50%.
+
+#### Product/Service Features
+<div align=center>
+     
+![image](https://github.com/user-attachments/assets/7ad66081-8b99-429d-b088-af1692fec09e)
+![image](https://github.com/user-attachments/assets/9ad999c4-811f-4b4c-9302-93d6f195f9fc)
+</div>
+
+- All product and service features, except PhoneService, show a significant p-value.
+- Customers who subscribe to DSL internet service along with both OnlineBackup and OnlineSecurity have the lowest churn rate at 6.75%. However, when they do not subscribe to these services (OnlineBackup and OnlineSecurity), the churn rate increases significantly to 34.6%.
+- Customers without internet service have a churn rate of 7.4%.
+- Customers who subscribe only to Fiber Optic internet service, without OnlineBackup and OnlineSecurity, have the highest churn rate at 55.8%.
+
+#### Payment Features
+<div align=center>
+     
+![image](https://github.com/user-attachments/assets/e87d71e5-7986-4cb9-a973-9a4ff8f65a67)
+![image](https://github.com/user-attachments/assets/216c63e3-22ef-4190-a12a-dd3a85952c00)
+</div>
+
+- Customers with a two-year contract generally have a churn rate of only 2.83%. Among them, those who use Mailed Check as their payment method and opt for manual (non-paperless) billing have the lowest churn rate at just 0.37%. Conversely, the highest churn rate within this group is 9.82% for customers who use Electronic Check with paperless billing.
+- Customers who use Electronic Check as their payment method with paperless billing experience a churn rate that is twice as high across different contract types.
+- 42% of customers with a monthly contract have churned, with the highest churn rate at 57.7% for those who use Electronic Check with paperless billing.
+
 
 ## Hazard Modeling
 ### Model Evaluation
