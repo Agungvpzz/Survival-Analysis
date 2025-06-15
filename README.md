@@ -1,7 +1,7 @@
 > If you encounter an error with the Jupyter Notebook on GitHub, please use the following links below:<br>
 > [Survival Analysis Notebook](https://nbviewer.org/github/Agungvpzz/Survival-Analysis/blob/main/Survival%20Analysis.ipynb) <br>
 
-# Telco-Survival-Analysis
+# Telco-Churn-Survival-Analysis
 
 ## 1. Introduction
 In this repository, I will conduct survival analysis using Python, utilizing Plotly for interactive data visualization. The analysis will include exploratory data analysis, survival function estimation using the Kaplan-Meier method, and hazard modeling with the Cox Proportional Hazards model via CoxPHFitter from the lifelines package. Additionally, I will improve the model's accuracy by integrating XGBoost predictions while ensuring that both survival target variables—Churn and Tenure—are fairly excluded.
@@ -25,41 +25,42 @@ The primary goal of this analysis is to understand customer behavior over time a
 5. How can businesses optimize retention strategies based on survival analysis findings?
 
 ## 3. Data Understanding
-The dataset can be explored and downloaded with the following link [telco-customer-churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn/data).
+- The dataset can be explored and downloaded with the following link [telco-customer-churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn/data).
+- Explore more with the following link [Legend](https://community.ibm.com/community/user/blogs/steven-macko/2019/07/11/telco-customer-churn-1113)
 
 ## 4. Methodology
 ### A. Exploratory Data Analysis (EDA)
-1. Conduct a visual inspection of the churn composition using a pie chart and churn distribution across different tenure using a bar chart.
-2. Calculate the Pearson correlation coefficient between each feature and the churn feature to assess their individual relationships, and visualize the results using a bar chart.
-3. Conduct chi-squared (χ²) tests to evaluate whether the distribution of churn values differs significantly across the unique categories of each categorical feature.
+1. Visualizing churn composition using a pie chart and analyzing churn distribution across tenure with a bar chart.
+2. Assessing feature relationships by calculating the Pearson correlation coefficient between each feature and churn, then visualizing the results with a bar chart.
+3. Evaluating categorical feature impact using chi-squared (χ²) tests to determine whether churn distributions differ significantly across unique category values.
 
 ### B. Survival Function Estimation using the Kaplan-Meier Method (Non-Parametric)
-1. Plot survival function curve and its confidence interval using a line chart.
-2. Plot survival function curve with mask based on each unique value of categorical features.
+1. Plotting the survival function curve along with its confidence interval using a line chart.
+2. Segmenting survival curves by masking based on each unique categorical feature value.
 
 ### C. Hazard Modeling with the Cox Proportional Hazards Model (Semi-Parametric)
 1. Data Preprocessing:
-  - Drop insignificant features based on the p-value from the chi-squared test.
-  - Apply custom encoding by combining one-hot encoding with manual feature selection to reduce variance among predictor features.
-  - Split the dataset using Surv.from_dataframe, designed for survival analysis.
+     - Drop insignificant features based on the p-value from the chi-squared test.
+     - Apply custom encoding by combining one-hot encoding with manual feature selection to reduce variance among predictor features.
+     - Split the dataset using Surv.from_dataframe, designed for survival analysis.
 2. Feature Engineering:
-  - Create new columns by transforming numerical features into quantiles.
-  - Add a probability prediction column from XGBoost’s probability estimates.
+    - Create new columns by transforming numerical features into quantiles.
+    - Add a probability prediction column from XGBoost’s probability estimates.
 3. Cox Proportional Hazards Model Fitting:
-  - Train the model using the default configuration.
-4. Model Evaluation
-  - Standard concordance index: Measures how well the model ranks survival risks.
-  - Censored concordance index: Evaluates survival risk ranking while accounting for censored observations.
-  - Cumulative Dynamic AUC: Assesses time-dependent prediction performance.
+    - Train the model using the default configuration.
+5. Model Evaluation
+    - Standard concordance index: Measures how well the model ranks survival risks
+    - Censored concordance index: Evaluates survival risk ranking while accounting for censored observations.
+    - Cumulative Dynamic AUC: Assesses time-dependent prediction performance.
 5. Model Comparison
-  - Compare survival modeling frameworks: lifelines vs. scikit-survival.
-  - Assess predictive performance across different feature sets.
+    - Compare survival modeling frameworks: lifelines vs. scikit-survival.
+    - Assess predictive performance across different feature sets.
 6. Model Visualization
-  - Plot Feature Coefficients: Displays the coefficient values for each covariate in the Cox Proportional Hazards model.
-  - Plot Partial Effects on Outcome: Illustrates how within-group differences in covariate values influence the shape of the survival function.
-  - Plot Time-Dependent ROC Curve: Evaluates the CoxPH model’s accuracy in predicting time to churn using a time-dependent AUC curve.
-  - Plot Survival Function Curve Based on Hazard Quartiles: Assesses how well the model stratifies customers into risk groups (e.g., quartiles based on predicted hazard).
-  - Plot Survival Function Curve for Time-to-Event Predictions: Compares the model’s predicted time-to-event outcomes against actual observations.
+    - Plot Feature Coefficients: Displays the coefficient values for each covariate in the Cox Proportional Hazards model.
+    - Plot Partial Effects on Outcome: Illustrates how within-group differences in covariate values influence the shape of the survival function.
+    - Plot Time-Dependent ROC Curve: Evaluates the CoxPH model’s accuracy in predicting time to churn using a time-dependent AUC curve.
+    - Plot Survival Function Curve Based on Hazard Quartiles: Assesses how well the model stratifies customers into risk groups (e.g., quartiles based on predicted hazard).
+    - Plot Survival Function Curve for Time-to-Event Predictions: Compares the model’s predicted time-to-event outcomes against actual observations.
 
 
 ## 5. Exploratory Data Analysis
@@ -67,7 +68,7 @@ The dataset can be explored and downloaded with the following link [telco-custom
 ### Churn Compositions
 <div align=center>
 
-  ![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/aa82f4ce-f1a6-4ca2-8a6e-82fa95c342a6)
+  ![image](https://github.com/user-attachments/assets/0e880dc6-daab-408c-9a00-8a0f7858b6c7)
 </div>
 
 ### Features Correlation Against Churn
