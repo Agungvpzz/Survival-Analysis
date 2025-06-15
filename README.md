@@ -93,13 +93,14 @@ Feature correlation in the following barplot informs us how each feature correla
 
 ![image](https://github.com/user-attachments/assets/dd2e19fa-dd26-4305-bd81-3907c51dc596)
 </div><br>
-### Segmenting survival curves by masking based on each unique categorical feature value.
 
+### Segmenting survival curves by masking based on each unique categorical feature value.
 #### All Features
 <div align=center>
 
 ![image](https://github.com/user-attachments/assets/2af3d3c1-46ed-4d2b-8904-d5154022c484)
 </div><br>
+
 - Among all features, Contract feature has the highest Logrank score, that is 2352.9, with signifficant p-value.
 - Only Gender and PhoneService features doesn't have significant p-value (p > 0.05), with logrank score less than 1
 
