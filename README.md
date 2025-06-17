@@ -207,7 +207,6 @@ Example with the first 10 customers
 ## 8. Conclusion
 
 ### Survival Analysis
-The survival function curve shows how different values within a feature depict the significant different curve among them. 
 
 ### Hazard Predictive Modeling
 
