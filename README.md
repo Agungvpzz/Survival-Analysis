@@ -72,8 +72,8 @@ The primary goal of this analysis is to understand customer behavior over time a
   ![image](https://github.com/user-attachments/assets/c3151031-da88-47d5-9859-96a68777cde6)
 </div><br>
 
-### Comparison Across All Categorical Features in Relation to Churn
-We can clearly compare each value across all categorical features with the help of this barplot below.
+### Churn Composition Across Variables
+The bar plot below allows us to clearly compare the composition of churn values across all categorical features.
 <div align=center>
 
 ![compairson_across_categorical_features](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/139e8945-b03f-4cad-b43a-421310db135e)
