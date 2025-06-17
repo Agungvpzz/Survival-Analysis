@@ -77,7 +77,10 @@ We can clearly compare each value across all categorical features with the help 
 <div align=center>
 
 ![compairson_across_categorical_features](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/139e8945-b03f-4cad-b43a-421310db135e)
-</div><br>
+</div>
+
+- A massive spike in churn (around 600 churned customers) at the very beginning of the customer lifecycle. This indicates many users leave shortly after joining, possibly due to onboarding issues, unmet expectations, or product mismatch.
+- After the initial spike, churn numbers steadily decrease and stabilize. This could suggest that if a customer stays past the first few months, they are more likely to remain loyal, or the stayed customers 
 
 ### Features Correlation Against Churn
 Feature correlation in the following barplot informs us how each feature correlates to customer churn behaviour.
@@ -93,6 +96,10 @@ Feature correlation in the following barplot informs us how each feature correla
 
 ![image](https://github.com/user-attachments/assets/dd2e19fa-dd26-4305-bd81-3907c51dc596)
 </div><br>
+
+- The most significant drop in the curve occurs within the first month after customers engage, with a 5% decline. This suggests that many users are simply testing the service.
+- After the first month, the curve continues to decline at a consistent pace each month, indicating a steady rate of churn.
+- After 5 years (60 months of tenure), the survival function remains above 65%, indicating long-term retention stability.
 
 ### Segmenting survival curves by masking based on each unique categorical feature value.
 #### All Features
@@ -146,6 +153,7 @@ Feature correlation in the following barplot informs us how each feature correla
 
 ![image](https://github.com/user-attachments/assets/583504c0-ffb3-4ed8-8c6c-813dd6941078)
 </div><br>
+
 The survival model exhibits strong predictive performance with minimal overfitting, as shown by the following metrics:
 - Concordance Index (C-Index) & C-IndexC (Censored):
     - Train: 0.9600
@@ -159,6 +167,7 @@ The survival model exhibits strong predictive performance with minimal overfitti
 
 ### Model Comparison
 <div align=center>
+     
 ![image](https://github.com/user-attachments/assets/be3350ad-fc3b-47fa-876b-690ee1814af7)
 </div><br>
 - CoxPHFitter, CoxPHSurvivalAnalysis: Include all columns.
@@ -171,7 +180,7 @@ The survival model exhibits strong predictive performance with minimal overfitti
 <div align=center>
 
 ![image](https://github.com/user-attachments/assets/842e2407-118e-4f88-a989-9cd77eb003c8)<br>
-</div><br>
+</div>
 
 - A positive coefficient indicates that the covariate increases the risk of churn (customers are more likely to leave sooner).
 - A negative coefficient suggests that the covariate reduces the risk of churn (customers are more likely to stay longer).
@@ -181,20 +190,29 @@ The survival model exhibits strong predictive performance with minimal overfitti
 <div align=center>
 
 ![image](https://github.com/user-attachments/assets/49423dfa-8073-476c-b617-dbd6cfa0e3ee)
-</div><br> 
+</div>
+
+- High initial AUCs: Both training and testing curves start high (~0.97), indicating strong early predictive performance.
+- Stable Mid-range Performance (Tenure 5–40): The AUC remains very high (around 0.99), suggesting the model is performing exceptionally well in this middle range of time.
+- Degradation Over Time (Post-40 Tenure): AUC values for both train and test begin to decline gradually, with a noticeable drop after around tenure 60. This could be due to fewer samples available at longer tenures, or that model generalization weakens over time.
+- Train vs Test Consistency: The test curve closely follows the train curve, indicating good generalization and low overfitting.
 
 #### Plot Partial Effects on Outcome: Illustrates how within-group differences in covariate values influence the shape of the survival function.
 <div align=center>
 
 ![image](https://github.com/user-attachments/assets/bc0c2856-e72b-4871-98e9-f56a8d3c8887)
-Example with Contract Covariate
-</div><br> 
+<br>Example with Contract Covariate
+</div>
 
-#### Plot Survival Function Curve Based on Hazard Quartiles: Assesses how well the model stratifies customers into risk groups (e.g., quartiles based on predicted hazard).
+- In this example, we assess the contract 2 years covariate
+
+#### Survival Function Curve Based on Hazard Quartiles
 <div align=center>
 
 ![image](https://github.com/user-attachments/assets/f9c9ffdb-c958-4da1-88df-75817a913bfa)
-</div><br> 
+</div>
+
+- The model stratifies customers into risk groups very well.
 
 #### Plot Survival Function Curve for Time-to-Event Predictions: Compares the model’s predicted time-to-event outcomes against actual observations.
 Example with the first 10 customers
@@ -207,9 +225,10 @@ Example with the first 10 customers
 ## 8. Conclusion
 
 ### Survival Analysis
+The survival curve shows three key retention patterns: early churn, steady decline, and long-term loyalty. The 5% drop in the first month suggests many users treat the service as a trial. Consistent month-to-month decline indicates predictable churn rather than sudden spikes. However, strong retention beyond five years (65% survival) highlights a loyal user base. These insights emphasize the need for early engagement strategies to reduce initial churn while sustaining long-term customer relationships.
 
-### Hazard Predictive Modeling
-
+### Hazard Predictive Modelin
+The model demonstrates strong and consistent performance over most of the time range, with only slight degradation in later time periods. This is a good sign in survival modeling, especially for applications like churn prediction, patient risk modeling, or customer lifetime value analysis.
 
 
 ## 9. Recommendation
