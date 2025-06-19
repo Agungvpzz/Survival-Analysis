@@ -129,7 +129,7 @@ The primary goal of this analysis is to understand customer behavior over time a
 
 ## 6. Survival Function Estimation
 
-### Survival Function Curve
+### A. Survival Function Curve
 <div align=center>
 
 ![image](https://github.com/user-attachments/assets/dd2e19fa-dd26-4305-bd81-3907c51dc596)
@@ -139,11 +139,9 @@ The primary goal of this analysis is to understand customer behavior over time a
 - After the first month, the curve continues to decline at a consistent pace each month, indicating a steady rate of churn.
 - After 5 years (60 months of tenure), the survival function remains above 65%, indicating long-term retention stability.
 
-2. Visualizing survival curves across the unique values of each categorical feature.
+### B. Survival Curves Across the Unique Values of each Categorical Feature
 
-### Survival Curves Across the Unique Values of each Categorical Feature
-
-#### Socio-Demographic Features
+#### a. Socio-Demographic Features
 <div align=center>
      
 ![image](https://github.com/user-attachments/assets/bb91b34a-9782-4876-b537-c25a3128318e)
@@ -155,7 +153,7 @@ The primary goal of this analysis is to understand customer behavior over time a
 - Customers who have a partner, are not senior citizens, and live with dependents have the lowest churn rate, at only 13.75%.
 - Customers who have no partner, are senior citizens, and have no dependents exhibit the highest churn rate, approaching 50%.
 
-#### Product/Service Features
+#### b. Product/Service Features
 <div align=center>
      
 ![image](https://github.com/user-attachments/assets/7ad66081-8b99-429d-b088-af1692fec09e)
@@ -167,7 +165,7 @@ The primary goal of this analysis is to understand customer behavior over time a
 - Customers without internet service have a churn rate of 7.4%.
 - Customers who subscribe only to Fiber Optic internet service, without OnlineBackup and OnlineSecurity, have the highest churn rate at 55.8%.
 
-#### Payment Features
+#### c. Payment Features
 <div align=center>
      
 ![image](https://github.com/user-attachments/assets/e87d71e5-7986-4cb9-a973-9a4ff8f65a67)
