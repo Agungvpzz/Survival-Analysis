@@ -25,18 +25,20 @@ The primary goal of this analysis is to understand customer behavior over time a
 
 ## 3. Data Understanding
 - The dataset can be explored and downloaded with the following link [telco-customer-churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn/data).
-- Explore more with the following link [Legend](https://community.ibm.com/community/user/blogs/steven-macko/2019/07/11/telco-customer-churn-1113)
+- Learn more about the dataset through this link [Legend](https://community.ibm.com/community/user/blogs/steven-macko/2019/07/11/telco-customer-churn-1113)
 
 ## 4. Methodology
 ### A. Exploratory Data Analysis (EDA)
-1. Visualizing churn composition using a pie chart and analyzing churn distribution across tenure with a bar chart.
-3. Assessing feature relationships by calculating the Pearson correlation coefficient between each feature and churn, then visualizing the results with a bar chart.
-4. Visualizing churn composition across unique values of all categorical features using a stacked bar chart.
-5. Evaluating categorical feature impact using chi-squared (χ²) tests to determine whether churn distributions differ significantly across unique category values.
+1. Evaluating the impact of categorical features using chi-squared (χ²) tests to determine whether churn associations differ significantly across unique category values.
+2. Visualizing churn composition using a pie chart.
+3. Visualizing the Pearson correlation coefficient between churn and each feature using a bar chart.
+4. Visualizing churn composition across categorical features using a stacked bar chart.
+5. Visualizing churn distribution across tenure using a stacked bar chart.
+6. Visualizing churn distribution across tenure under different conditions using multiple stacked bar charts.
 
 ### B. Survival Function Estimation using the Kaplan-Meier Method (Non-Parametric)
-1. Plotting the survival function curve along with its confidence interval using a line chart.
-2. Segmenting survival curves by masking based on each unique categorical feature value.
+1. Visualizing the survival function curve and its confidence interval using a line chart.
+2. Visualizing survival curves across the unique values of each categorical feature.
 
 ### C. Hazard Modeling with the Cox Proportional Hazards Model (Semi-Parametric)
 1. Data Preprocessing:
