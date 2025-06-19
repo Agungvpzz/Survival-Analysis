@@ -212,9 +212,12 @@ The survival model exhibits strong predictive performance with minimal overfitti
    ![Feature Coefficients](https://github.com/user-attachments/assets/bf96841b-ab2a-4d19-a191-4bb557bbfafa)
 </div>
 
-- A positive coefficient indicates that the covariate increases the risk of churn (customers are more likely to leave sooner).
-- A negative coefficient suggests that the covariate reduces the risk of churn (customers are more likely to stay longer).
-- A coefficient near zero means the covariate has minimal impact on churn.
+- The floating bar chart illustrates each covariate’s coefficient along with its confidence interval.
+- Features with insignificant p-values are marked in red, indicating they can be excluded from further interpretation.
+- Among all variables, TotalCharges and Contract emerge as the strongest predictors of churn risk.
+   - TotalCharges behaves as expected: customers who have spent more over time are typically long-term users. As a result, it has a negative coefficient, indicating a reduced hazard of churn.
+   - Given the ranked target mean encoding, the contract type with the highest association to churn is represented by rank 2—corresponding to the Month-to-month plan—which significantly increases churn risk.
+- Coefficients near zero suggest that a covariate has little to no effect on churn risk.
 
 #### b. Time-Dependent ROC Curve
 <div align=center>
