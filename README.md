@@ -197,7 +197,7 @@ The survival model exhibits strong predictive performance with minimal overfitti
 ### B. Model Comparison
 <div align=center>
      
-   ![Model Comparison](https://github.com/user-attachments/assets/be3350ad-fc3b-47fa-876b-690ee1814af7)
+   ![Model Comparison](https://github.com/user-attachments/assets/2efd3932-352c-4444-a919-5e5998338121)
 </div>
 
 - CoxPHFitter, CoxPHSurvivalAnalysis: Include all columns.
@@ -209,7 +209,7 @@ The survival model exhibits strong predictive performance with minimal overfitti
 #### a. Feature Coefficients
 <div align=center>
 
-   ![Feature Coefficients](https://github.com/user-attachments/assets/842e2407-118e-4f88-a989-9cd77eb003c8)
+   ![Feature Coefficients](https://github.com/user-attachments/assets/bf96841b-ab2a-4d19-a191-4bb557bbfafa)
 </div>
 
 - A positive coefficient indicates that the covariate increases the risk of churn (customers are more likely to leave sooner).
@@ -219,7 +219,7 @@ The survival model exhibits strong predictive performance with minimal overfitti
 #### b. Time-Dependent ROC Curve
 <div align=center>
 
-   ![Time-Dependent ROC Curve](https://github.com/user-attachments/assets/49423dfa-8073-476c-b617-dbd6cfa0e3ee)
+   ![Time-Dependent ROC Curve](https://github.com/user-attachments/assets/0e5b9c52-1244-4a12-b58b-4569baf6f869)
 </div>
 
 - High initial AUCs: Both training and testing curves start high (~0.97), indicating strong early predictive performance.
@@ -231,10 +231,10 @@ The survival model exhibits strong predictive performance with minimal overfitti
 <div align=center>
 Example Covariate: Contract
    
-   ![Covariate Partial Effects](https://github.com/user-attachments/assets/bc0c2856-e72b-4871-98e9-f56a8d3c8887)
+   ![Covariate Partial Effects](https://github.com/user-attachments/assets/349b8426-f7e5-4395-aaff-e31a1b957ec7)
 </div>
 
-- Since
+- As shown in the line chart above, the survival curves differ significantly across contract types.
 
 #### d. Survival Function Curve Based on Hazard Quartiles
 <div align=center>
@@ -242,14 +242,14 @@ Example Covariate: Contract
    ![Survival Function Curve Based on Hazard](https://github.com/user-attachments/assets/f9c9ffdb-c958-4da1-88df-75817a913bfa)
 </div>
 
-- The line curves show how well our hazard model 
+-The survival curves shows how clearly the hazard model separates customers by quartile-based risk levels.
 
 #### e. Survival Function Curve for Time-to-Event Predictions
 Example with the first 10 customers
 <div align=center>
 
    ![Time-to-Event Predictions](https://github.com/user-attachments/assets/cab139fe-77c6-48b9-9d59-8b5e00eabc49)
-</div><br> 
+</div>
 
 
 ## 8. Conclusion
