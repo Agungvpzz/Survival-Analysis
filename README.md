@@ -103,6 +103,10 @@ The primary goal of this analysis is to understand customer behavior over time a
    ![Churn Distribution Across Tenure Periods under Different Conditions](https://github.com/user-attachments/assets/0c741266-d483-463c-bc1d-62b3f2380212)
 </div>
 
+- The bar charts clearly illustrate how churn composition varies across customer tenure for each contract type.
+- For `Month-to-month` contracts, the majority of churn occurs within the first year—particularly in the first month. Churn then drops sharply until month six, followed by a steady decline. Very few customers remain active beyond five years.
+- The `One-year` contract displays a relatively uniform distribution of churn across tenure, suggesting consistent retention dynamics throughout the contract period.
+- The `Two-year` contract displays a higher proportion of long-term customers, many of whom have remained active for over five years. This suggests strong loyalty among existing subscribers. However, the lower presence of newer users on this contract type may indicate a shift in preference toward more flexible, short-term plans—potentially challenging future retention
 
 ### E. Association Between Categorical Features and Churn using χ² tests
 <div align=center>
@@ -110,8 +114,8 @@ The primary goal of this analysis is to understand customer behavior over time a
    ![chi2 tests](https://github.com/user-attachments/assets/446d77a1-a64b-47dc-bf7a-3cd0f5a1db34)
 </div>
 
-- As shown in the table, `Gender` and `PhoneService` have insignificant p-value, we drop these features in Hazard Modeling later.
-- Other features have significant p-value as shown in the table.
+- As shown in the table, Gender and PhoneService have high p-values, indicating no significant association with churn; therefore, we exclude them from the hazard modeling process.
+- The remaining categorical features exhibit statistically significant p-values, supporting their inclusion in the model.
 
 
 ### F. Pearson Correlation Coefficient Between Churn and each Feature
