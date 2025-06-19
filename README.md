@@ -72,7 +72,9 @@ The primary goal of this analysis is to understand customer behavior over time a
 <div align=center>
 
   ![Chrun Composition](https://github.com/user-attachments/assets/0e880dc6-daab-408c-9a00-8a0f7858b6c7)  
+  The pie chart indicates that 26.5% (1869) of our customers have churned.
 </div>
+
 
 ### B. Churn Composition Across Categorical Features
 <div align=center>
@@ -80,14 +82,19 @@ The primary goal of this analysis is to understand customer behavior over time a
    ![Churn Composition Across Categorical Features](https://github.com/user-attachments/assets/8ceb5b6e-d7af-459b-9272-0932a557c3a5)
 </div>
 
+- Sorted by χ² values, the bar chart highlights how churn composition varies across each categorical feature.
+- As expected, the Contract feature reflects customers’ initial subscription agreements over specific time periods.
+   - Although the monthly contract type has the highest churn rate, it still accounts for the largest share of active customers compared to other contract types.
+- Other features, as shown in the chart, demonstrate significant differences in churn composition based on their `chi²` values—except for `Gender` and `PhoneService`, which show weak or negligible associations.
+
 ### C. Churn Distribution Across Tenure Periods
 <div align=center>
 
    ![Churn Distribution Across Tenure Periods](https://github.com/user-attachments/assets/3b2767f2-638d-400b-8286-259eca0bca47)
 </div>
 
-- A massive spike in churn (around 600 churned customers) at the very beginning of the customer lifecycle. This indicates many users leave shortly after joining, possibly due to onboarding issues, unmet expectations, or product mismatch.
-- After the initial spike, churn numbers steadily decrease and stabilize. This could suggest that if a customer stays past the first few months, they are more likely to remain loyal, or the stayed customers 
+- The bar chart reveals a sharp spike in churn (around 600 customers) early in the customer lifecycle. This suggests many users leave shortly after joining—possibly due to onboarding issues, unmet expectations, or a misalignment between product and customer needs.
+- After this initial drop-off, churn steadily declines and stabilizes. This trend may indicate that customers who remain beyond the first few months are more likely to stay loyal, or that those who churn early differ significantly from long-term users.
 
 
 ### D. Churn Distribution Across Tenure Periods under Different Conditions
