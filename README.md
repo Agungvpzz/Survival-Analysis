@@ -41,28 +41,29 @@ The primary goal of this analysis is to understand customer behavior over time a
 2. Visualizing survival curves across the unique values of each categorical feature.
 
 ### C. Hazard Modeling with the Cox Proportional Hazards Model (Semi-Parametric)
-1. Data Preprocessing:
-     - Drop insignificant features based on the p-value from the chi-squared test.
-     - Apply custom encoding by combining one-hot encoding with manual feature selection to reduce variance among predictor features.
-     - Split the dataset using Surv.from_dataframe, designed for survival analysis.
-2. Feature Engineering:
-    - Create new columns by transforming numerical features into quantiles.
-    - Add a probability prediction column from XGBoost’s probability estimates.
-3. Cox Proportional Hazards Model Fitting:
-    - Train the model using the default configuration.
-5. Model Evaluation
-    - Standard concordance index: Measures how well the model ranks survival risks
-    - Censored concordance index: Evaluates survival risk ranking while accounting for censored observations.
-    - Cumulative Dynamic AUC: Assesses time-dependent prediction performance.
-5. Model Comparison
-    - Compare survival modeling frameworks: lifelines vs. scikit-survival.
-    - Assess predictive performance across different feature sets.
-6. Model Visualization
-    - Plot Feature Coefficients: Displays the coefficient values for each covariate in the Cox Proportional Hazards model.
-    - Plot Partial Effects on Outcome: Illustrates how within-group differences in covariate values influence the shape of the survival function.
-    - Plot Time-Dependent ROC Curve: Evaluates the CoxPH model’s accuracy in predicting time to churn using a time-dependent AUC curve.
-    - Plot Survival Function Curve Based on Hazard Quartiles: Assesses how well the model stratifies customers into risk groups (e.g., quartiles based on predicted hazard).
-    - Plot Survival Function Curve for Time-to-Event Predictions: Compares the model’s predicted time-to-event outcomes against actual observations.
+1. **Data Pre-processing**
+   - Drop features whose χ² p-values indicate no significant association with churn.
+   - Apply a hybrid encoder that couples one-hot encoding with manual grouping to curb predictor variance.
+   - Split the data with `Surv.from_dataframe`, reserving 30 % for testing and stratifying on churn to keep class balance.
+2. **Feature Engineering**
+   - Transform continuous variables into quantile-based bins.
+   - Append XGBoost probability estimates as an additional predictor.
+3. **Model Fitting**
+   - Fit a Cox Proportional Hazards model using default hyper-parameters.
+4. **Model Evaluation**
+   - Examine the `CoxPHFitter` summary—coefficients, hazard ratios (exp(coef)), z-scores, p-values, and −log₂(p)—to judge covariate reliability.
+   - Compute the standard concordance index to quantify the model’s ranking ability.
+   - Compute the censored concordance index to incorporate censored observations.
+   - Calculate the cumulative dynamic AUC to assess time-dependent predictive performance.
+5. **Model Comparison**
+   - Contrast results from the *lifelines* and *scikit-survival* implementations.  
+   - Benchmark predictive performance across alternative feature sets.
+6. **Model Visualisation**  
+   - Plot coefficients with their 95 % confidence intervals (bar chart).
+   - Plot covariate partial effects to show how within-group changes shift the survival curve (line chart).
+   - Draw time-dependent ROC curves to illustrate accuracy over time.
+   - Plot survival curves stratified by hazard-risk quartiles to display risk separation.
+   - Overlay predicted vs. observed time-to-event curves to assess calibration.
 
 
 ## 5. Exploratory Data Analysis
