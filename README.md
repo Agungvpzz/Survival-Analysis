@@ -93,7 +93,7 @@ The primary goal of this analysis is to understand customer behavior over time a
    ![Churn Distribution Across Tenure Periods](https://github.com/user-attachments/assets/3b2767f2-638d-400b-8286-259eca0bca47)
 </div>
 
-- The bar chart reveals a sharp spike in churn (around 600 customers) early in the customer lifecycle. This suggests many users leave shortly after joining—possibly due to onboarding issues, unmet expectations, or a misalignment between product and customer needs.
+- The bar chart reveals a sharp spike in churn (around 380 customers) early in the customer lifecycle. This suggests many users leave shortly after joining—possibly due to onboarding issues, unmet expectations, or a misalignment between product and customer needs.
 - After this initial drop-off, churn steadily declines and stabilizes. This trend may indicate that customers who remain beyond the first few months are more likely to stay loyal, or that those who churn early differ significantly from long-term users.
 
 
@@ -107,15 +107,22 @@ The primary goal of this analysis is to understand customer behavior over time a
 ### E. Association Between Categorical Features and Churn using χ² tests
 <div align=center>
    
-   ![Chi2 Tests](https://github.com/user-attachments/assets/a20f5714-bc1f-4a98-8ff6-36f57922ab26)
+   ![chi2 tests](https://github.com/user-attachments/assets/446d77a1-a64b-47dc-bf7a-3cd0f5a1db34)
 </div>
+
+- As shown in the table, `Gender` and `PhoneService` have insignificant p-value, we drop these features in Hazard Modeling later.
+- Other features have significant p-value as shown in the table.
+
 
 ### F. Pearson Correlation Coefficient Between Churn and each Feature
 <div align=center>
      
 ![Pearson Correlation Coefficient Between Churn and each Feature](https://github.com/user-attachments/assets/3319f680-85c4-4afb-8ded-8d5d85ce98ed)
-
 </div>
+
+- The bar chart shows that `MonthlyCharges` has a mild positive correlation (~0.20) with churn. This likely reflects pricing differences, as short-term contracts—linked to higher churn—often come with higher monthly costs.
+- TotalCharges shows a negative correlation with churn, as higher spending typically reflects longer tenure—meaning these customers are still active and have not churned.
+- Together, `MonthlyCharges`, `TotalCharges`, and `Contract` capture overlapping aspects of tenure and pricing. While not a direct case of data leakage, their interdependence warrants caution—especially with multicollinearity in modeling.
 
 ## 6. Survival Function Estimation
 ### Survival Function Curve
