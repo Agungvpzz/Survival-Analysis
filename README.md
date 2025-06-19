@@ -235,8 +235,8 @@ Example Covariate: Contract
 </div>
 
 - As shown in the chart above, survival curves vary significantly across contract types.
-- After 3 years, the survival rate for `Month-to-month` contracts drops to 46%, while `One-year` and `Two-year` contracts retain higher rates of 84% and 96%, respectively.
-- By year 4, `Month-to-month` contracts fall further to just 20%, `One-year` contracts decline sharply to 41.5%, yet `Two-year` contracts still maintain a survival rate above 80%.
+- After 3 years, the survival rate for `Month-to-month` contract drops to 46%, while `One-year` and `Two-year` contracts retain higher rates of 84% and 96%, respectively.
+- By year 4, `Month-to-month` contract fall further to just 20%, `One-year` contract decline sharply to 41.5%, yet `Two-year` contract still maintain a survival rate above 80%.
 - Beyond year 5, only the `Two-year` contract continues to retain a substantial portion of customers, with a survival rate of 44.7%.
 
 #### d. Survival Function Curve Based on Hazard Quartiles
