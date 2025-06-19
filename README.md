@@ -82,7 +82,7 @@ The primary goal of this analysis is to understand customer behavior over time a
    ![Churn Composition Across Categorical Features](https://github.com/user-attachments/assets/8ceb5b6e-d7af-459b-9272-0932a557c3a5)
 </div>
 
-- Sorted by χ² values, the bar chart highlights how churn composition varies across each categorical feature.
+- Sorted by chi-square (χ²) values, the bar chart highlights how churn composition varies across each categorical feature.
 - As expected, the Contract feature reflects customers’ initial subscription agreements over specific time periods.
    - Although the monthly contract type has the highest churn rate, it still accounts for the largest share of active customers compared to other contract types.
 - Other features, as shown in the chart, demonstrate significant differences in churn composition based on their `chi²` values—except for `Gender` and `PhoneService`, which show weak or negligible associations.
