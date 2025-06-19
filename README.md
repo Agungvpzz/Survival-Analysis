@@ -132,8 +132,8 @@ The primary goal of this analysis is to understand customer behavior over time a
 ### A. Survival Function Curve
 <div align=center>
 
-![image](https://github.com/user-attachments/assets/dd2e19fa-dd26-4305-bd81-3907c51dc596)
-</div><br>
+![Survival Function Curve](https://github.com/user-attachments/assets/dd2e19fa-dd26-4305-bd81-3907c51dc596)
+</div>
 
 - The most significant drop in the curve occurs within the first month after customers engage, with a 5% decline. This suggests that many users are simply testing the service.
 - After the first month, the curve continues to decline at a consistent pace each month, indicating a steady rate of churn.
@@ -144,9 +144,9 @@ The primary goal of this analysis is to understand customer behavior over time a
 #### a. Socio-Demographic Features
 <div align=center>
      
-![image](https://github.com/user-attachments/assets/bb91b34a-9782-4876-b537-c25a3128318e)
-![image](https://github.com/user-attachments/assets/52db90b9-b2bf-4106-b837-7f2d7c1e7741)
-</div><br>
+   ![Socio-Demographic Features](https://github.com/user-attachments/assets/bb91b34a-9782-4876-b537-c25a3128318e)
+   ![Socio-Demographic Features Table](https://github.com/user-attachments/assets/52db90b9-b2bf-4106-b837-7f2d7c1e7741)
+</div>
 
 - The Partner feature shows a significant difference in survival probabilities.
 - Among all socio-demographic features, only Gender did not reach statistical significance.
@@ -156,9 +156,9 @@ The primary goal of this analysis is to understand customer behavior over time a
 #### b. Product/Service Features
 <div align=center>
      
-![image](https://github.com/user-attachments/assets/7ad66081-8b99-429d-b088-af1692fec09e)
-![image](https://github.com/user-attachments/assets/9ad999c4-811f-4b4c-9302-93d6f195f9fc)
-</div><br>
+   ![Service Features](https://github.com/user-attachments/assets/7ad66081-8b99-429d-b088-af1692fec09e)
+   ![Service Features Table](https://github.com/user-attachments/assets/9ad999c4-811f-4b4c-9302-93d6f195f9fc)
+</div>
 
 - All product and service features, except PhoneService, show a significant p-value.
 - Customers who subscribe to DSL internet service along with both OnlineBackup and OnlineSecurity have the lowest churn rate at 6.75%. However, when they do not subscribe to these services (OnlineBackup and OnlineSecurity), the churn rate increases significantly to 34.6%.
@@ -168,21 +168,22 @@ The primary goal of this analysis is to understand customer behavior over time a
 #### c. Payment Features
 <div align=center>
      
-![image](https://github.com/user-attachments/assets/e87d71e5-7986-4cb9-a973-9a4ff8f65a67)
-![image](https://github.com/user-attachments/assets/216c63e3-22ef-4190-a12a-dd3a85952c00)
-</div><br>
+   ![Payment Features](https://github.com/user-attachments/assets/e87d71e5-7986-4cb9-a973-9a4ff8f65a67)
+   ![Payment Features Table](https://github.com/user-attachments/assets/216c63e3-22ef-4190-a12a-dd3a85952c00)
+</div>
 
 - Customers with a two-year contract generally have a churn rate of only 2.83%. Among them, those who use Mailed Check as their payment method and opt for manual (non-paperless) billing have the lowest churn rate at just 0.37%. Conversely, the highest churn rate within this group is 9.82% for customers who use Electronic Check with paperless billing.
 - Customers who use Electronic Check as their payment method with paperless billing experience a churn rate that is twice as high across different contract types.
 - 42% of customers with a monthly contract have churned, with the highest churn rate at 57.7% for those who use Electronic Check with paperless billing.
 
 
-## Hazard Modeling
-### Model Evaluation
+## 7. Hazard Modeling
+
+### A. Model Evaluation
 <div align=center>
 
-![image](https://github.com/user-attachments/assets/583504c0-ffb3-4ed8-8c6c-813dd6941078)
-</div><br>
+   ![Model Evaluation](https://github.com/user-attachments/assets/583504c0-ffb3-4ed8-8c6c-813dd6941078)
+</div>
 
 The survival model exhibits strong predictive performance with minimal overfitting, as shown by the following metrics:
 - Concordance Index (C-Index) & C-IndexC (Censored):
@@ -195,31 +196,32 @@ The survival model exhibits strong predictive performance with minimal overfitti
     - Excellent discriminatory ability in time-dependent survival probability estimation.
 - The close alignment between train and test results highlights good generalization and model robustness for survival prediction.
 
-### Model Comparison
+### B. Model Comparison
 <div align=center>
      
-![image](https://github.com/user-attachments/assets/be3350ad-fc3b-47fa-876b-690ee1814af7)
-</div><br>
+   ![Model Comparison](https://github.com/user-attachments/assets/be3350ad-fc3b-47fa-876b-690ee1814af7)
+</div>
+
 - CoxPHFitter, CoxPHSurvivalAnalysis: Include all columns.
 - cph2, cphsk2: Exclude columns with an insignificant p-value (> 0.05).
 - cph3, cphsk3: Exclude columns with an insignificant logp value (< 10).
 
-### Model Visualization
+### C. Model Visualization
 
-#### Feature Coefficients: Displays the coefficient values for each covariate in the Cox Proportional Hazards model.
+#### a. Feature Coefficients
 <div align=center>
 
-![image](https://github.com/user-attachments/assets/842e2407-118e-4f88-a989-9cd77eb003c8)<br>
+   ![Feature Coefficients](https://github.com/user-attachments/assets/842e2407-118e-4f88-a989-9cd77eb003c8)
 </div>
 
 - A positive coefficient indicates that the covariate increases the risk of churn (customers are more likely to leave sooner).
 - A negative coefficient suggests that the covariate reduces the risk of churn (customers are more likely to stay longer).
 - A coefficient near zero means the covariate has minimal impact on churn.
 
-#### Plot Time-Dependent ROC Curve: Evaluates the CoxPH model’s accuracy in predicting time to churn using a time-dependent AUC curve.
+#### b. Time-Dependent ROC Curve
 <div align=center>
 
-![image](https://github.com/user-attachments/assets/49423dfa-8073-476c-b617-dbd6cfa0e3ee)
+   ![Time-Dependent ROC Curve](https://github.com/user-attachments/assets/49423dfa-8073-476c-b617-dbd6cfa0e3ee)
 </div>
 
 - High initial AUCs: Both training and testing curves start high (~0.97), indicating strong early predictive performance.
@@ -227,37 +229,37 @@ The survival model exhibits strong predictive performance with minimal overfitti
 - Degradation Over Time (Post-40 Tenure): AUC values for both train and test begin to decline gradually, with a noticeable drop after around tenure 60. This could be due to fewer samples available at longer tenures, or that model generalization weakens over time.
 - Train vs Test Consistency: The test curve closely follows the train curve, indicating good generalization and low overfitting.
 
-#### Plot Partial Effects on Outcome: Illustrates how within-group differences in covariate values influence the shape of the survival function.
+#### c. Covariate Partial Effects
 <div align=center>
 
-![image](https://github.com/user-attachments/assets/bc0c2856-e72b-4871-98e9-f56a8d3c8887)
+   ![Covariate Partial Effects](https://github.com/user-attachments/assets/bc0c2856-e72b-4871-98e9-f56a8d3c8887)
 <br>Example with Contract Covariate
 </div>
 
 - In this example, we assess the contract 2 years covariate
 
-#### Survival Function Curve Based on Hazard Quartiles
+#### d. Survival Function Curve Based on Hazard Quartiles
 <div align=center>
 
-![image](https://github.com/user-attachments/assets/f9c9ffdb-c958-4da1-88df-75817a913bfa)
+   ![Survival Function Curve Based on Hazard](https://github.com/user-attachments/assets/f9c9ffdb-c958-4da1-88df-75817a913bfa)
 </div>
 
 - The model stratifies customers into risk groups very well.
 
-#### Plot Survival Function Curve for Time-to-Event Predictions: Compares the model’s predicted time-to-event outcomes against actual observations.
+#### e. Survival Function Curve for Time-to-Event Predictions
 Example with the first 10 customers
 <div align=center>
 
-![image](https://github.com/user-attachments/assets/cab139fe-77c6-48b9-9d59-8b5e00eabc49)
+   ![Time-to-Event Predictions](https://github.com/user-attachments/assets/cab139fe-77c6-48b9-9d59-8b5e00eabc49)
 </div><br> 
 
 
 ## 8. Conclusion
 
-### Survival Analysis
+### A. Survival Analysis
 The survival curve shows three key retention patterns: early churn, steady decline, and long-term loyalty. The 5% drop in the first month suggests many users treat the service as a trial. Consistent month-to-month decline indicates predictable churn rather than sudden spikes. However, strong retention beyond five years (65% survival) highlights a loyal user base. These insights emphasize the need for early engagement strategies to reduce initial churn while sustaining long-term customer relationships.
 
-### Hazard Predictive Modelin
+### B. Hazard Predictive Modelin
 The model demonstrates strong and consistent performance over most of the time range, with only slight degradation in later time periods. This is a good sign in survival modeling, especially for applications like churn prediction, patient risk modeling, or customer lifetime value analysis.
 
 
