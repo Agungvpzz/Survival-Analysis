@@ -234,7 +234,10 @@ Example Covariate: Contract
    ![Covariate Partial Effects](https://github.com/user-attachments/assets/349b8426-f7e5-4395-aaff-e31a1b957ec7)
 </div>
 
-- As shown in the line chart above, the survival curves differ significantly across contract types.
+- As shown in the chart above, survival curves vary significantly across contract types.
+- After 3 years, the survival rate for `Month-to-month` contracts drops to 46%, while `One-year` and `Two-year` contracts retain higher rates of 84% and 96%, respectively.
+- By year 4, `Month-to-month` contracts fall further to just 20%, `One-year` contracts decline sharply to 41.5%, yet `Two-year` contracts still maintain a survival rate above 80%.
+- Beyond year 5, only the `Two-year` contract continues to retain a substantial portion of customers, with a survival rate of 44.7%.
 
 #### d. Survival Function Curve Based on Hazard Quartiles
 <div align=center>
@@ -242,15 +245,15 @@ Example Covariate: Contract
    ![Survival Function Curve Based on Hazard](https://github.com/user-attachments/assets/f9c9ffdb-c958-4da1-88df-75817a913bfa)
 </div>
 
--The survival curves shows how clearly the hazard model separates customers by quartile-based risk levels.
+- The survival curves shows how clearly the hazard model separates customers by quartile-based risk levels.
 
 #### e. Survival Function Curve for Time-to-Event Predictions
-Example with the first 10 customers
 <div align=center>
 
-   ![Time-to-Event Predictions](https://github.com/user-attachments/assets/cab139fe-77c6-48b9-9d59-8b5e00eabc49)
+   ![Time-to-Event Predictions](https://github.com/user-attachments/assets/e5014783-79d5-4fd6-a0de-c48c592ce069)
 </div>
 
+- Using customer samples, as shown in the chart above, the model captures several churn events with good accuracy
 
 ## 8. Conclusion
 
