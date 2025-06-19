@@ -29,12 +29,13 @@ The primary goal of this analysis is to understand customer behavior over time a
 
 ## 4. Methodology
 ### A. Exploratory Data Analysis (EDA)
-1. Evaluating the impact of categorical features using chi-squared (χ²) tests to determine whether churn associations differ significantly across unique category values.
-2. Visualizing churn composition using a pie chart.
-3. Visualizing the Pearson correlation coefficient between churn and each feature using a bar chart.
-4. Visualizing churn composition across categorical features using a stacked bar chart.
-5. Visualizing churn distribution across tenure using a stacked bar chart.
-6. Visualizing churn distribution across tenure under different conditions using multiple stacked bar charts.
+1. Visualizing churn composition using a pie chart.
+2. Visualizing churn composition across categorical features using a stacked bar chart.
+3. Visualizing churn distribution across tenure using a stacked bar chart.
+4. Visualizing churn distribution across tenure under different conditions using multiple stacked bar charts.
+5. Assessing the association between categorical features and churn using χ² tests.
+6. Visualizing the Pearson correlation coefficient between churn and each feature using a bar chart.
+
 
 ### B. Survival Function Estimation using the Kaplan-Meier Method (Non-Parametric)
 1. Visualizing the survival function curve and its confidence interval using a line chart.
@@ -47,7 +48,7 @@ The primary goal of this analysis is to understand customer behavior over time a
    - Split the data with `Surv.from_dataframe`, reserving 30 % for testing and stratifying on churn to keep class balance.
 2. **Feature Engineering**
    - Transform continuous variables into quantile-based bins.
-   - Append XGBoost probability estimates as an additional predictor.
+   - Append `XGBoost` probability estimates as an additional predictor.
 3. **Model Fitting**
    - Fit a Cox Proportional Hazards model using default hyper-parameters.
 4. **Model Evaluation**
@@ -67,33 +68,49 @@ The primary goal of this analysis is to understand customer behavior over time a
 
 
 ## 5. Exploratory Data Analysis
-
-### Churn Compositions and Distribution Across Different Tenure
+### A. Churn Composition
 <div align=center>
 
-  ![image](https://github.com/user-attachments/assets/0e880dc6-daab-408c-9a00-8a0f7858b6c7)
-  ![image](https://github.com/user-attachments/assets/c3151031-da88-47d5-9859-96a68777cde6)
-</div><br>
+  ![Chrun Composition](https://github.com/user-attachments/assets/0e880dc6-daab-408c-9a00-8a0f7858b6c7)  
+</div>
 
-### Churn Composition Across Variables
-The bar plot below allows us to clearly compare the composition of churn values across all categorical features.
+### B. Churn Composition Across Categorical Features
 <div align=center>
 
-![compairson_across_categorical_features](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/139e8945-b03f-4cad-b43a-421310db135e)
+   ![Churn Composition Across Categorical Features](https://github.com/user-attachments/assets/8ceb5b6e-d7af-459b-9272-0932a557c3a5)
+</div>
+
+### C. Churn Distribution Across Tenure Periods
+<div align=center>
+
+   ![Churn Distribution Across Tenure Periods](https://github.com/user-attachments/assets/3b2767f2-638d-400b-8286-259eca0bca47)
 </div>
 
 - A massive spike in churn (around 600 churned customers) at the very beginning of the customer lifecycle. This indicates many users leave shortly after joining, possibly due to onboarding issues, unmet expectations, or product mismatch.
 - After the initial spike, churn numbers steadily decrease and stabilize. This could suggest that if a customer stays past the first few months, they are more likely to remain loyal, or the stayed customers 
 
-### Features Correlation Against Churn
-Feature correlation in the following barplot informs us how each feature correlates to customer churn behaviour.
+
+### D. Churn Distribution Across Tenure Periods under Different Conditions
+<div align=center>
+
+   ![Churn Distribution Across Tenure Periods under Different Conditions](https://github.com/user-attachments/assets/0c741266-d483-463c-bc1d-62b3f2380212)
+</div>
+
+
+### E. Association Between Categorical Features and Churn using χ² tests
+<div align=center>
+   
+   ![Chi2 Tests](https://github.com/user-attachments/assets/a20f5714-bc1f-4a98-8ff6-36f57922ab26)
+</div>
+
+### F. Pearson Correlation Coefficient Between Churn and each Feature
 <div align=center>
      
-![corr_churn_features](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/cf57de7d-d9dc-4884-967a-89bcf009afcd)
-![corr_churn_features_grouped](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/89748da4-5922-443f-8b67-fdab2e8af5f2)
-</div><br>
+![Pearson Correlation Coefficient Between Churn and each Feature](https://github.com/user-attachments/assets/3319f680-85c4-4afb-8ded-8d5d85ce98ed)
 
-## Survival Function Estimation
+</div>
+
+## 6. Survival Function Estimation
 ### Survival Function Curve
 <div align=center>
 
