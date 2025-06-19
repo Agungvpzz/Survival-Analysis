@@ -4,7 +4,7 @@
 # Telco-Churn-Survival-Analysis
 
 ## 1. Introduction
-In this repository, I will conduct survival analysis using Python, utilizing Plotly for interactive data visualization. The analysis will include exploratory data analysis, survival function estimation using the Kaplan-Meier method, and hazard modeling with the Cox Proportional Hazards model via CoxPHFitter from the lifelines package. Additionally, I will improve the model's accuracy by integrating XGBoost predictions while ensuring that both survival target variables—Churn and Tenure—are fairly excluded.
+In this repository, I will conduct survival analysis using Python, utilizing Plotly for interactive data visualization. The analysis will include exploratory data analysis, survival function estimation using the Kaplan-Meier method, and hazard modeling with the Cox Proportional Hazards model via CoxPHFitter from the lifelines package.
 
 ## 2. Business Understanding
 
@@ -14,14 +14,12 @@ The primary goal of this analysis is to understand customer behavior over time a
 ### B. Objective of this analysis
 1. Estimate survival probabilities to understand customer retention trends.
 2. Identify key factors influencing customer churn using Cox Proportional Hazards modeling.
-3. Enhance predictive accuracy by integrating XGBoost while ensuring fair exclusion of target variables (Churn and Tenure).
-4. Provide actionable insights for customer segmentation and retention strategies.
+3. Provide actionable insights for customer segmentation and retention strategies.
 
 ### C. Key Questions to Answer
 1. What is the estimated survival probability of customers over different time periods?
 2. Which factors have the strongest impact on customer churn risk?
-3. Can predictive modeling improve the accuracy of churn risk estimation?
-4. How can businesses optimize retention strategies based on survival analysis findings?
+3. How can businesses optimize retention strategies based on survival analysis findings?
 
 ## 3. Data Understanding
 - The dataset can be explored and downloaded with the following link [telco-customer-churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn/data).
@@ -43,11 +41,10 @@ The primary goal of this analysis is to understand customer behavior over time a
 ### C. Hazard Modeling with the Cox Proportional Hazards Model (Semi-Parametric)
 1. **Data Pre-processing**
    - Drop features whose χ² p-values indicate no significant association with churn.
-   - Apply a hybrid encoder that couples one-hot encoding with manual grouping to curb predictor variance.
+   - Apply ranked target mean encoding for all categorical features.
    - Split the data with `Surv.from_dataframe`, reserving 30 % for testing and stratifying on churn to keep class balance.
 2. **Feature Engineering**
    - Transform continuous variables into quantile-based bins.
-   - Append `XGBoost` probability estimates as an additional predictor.
 3. **Model Fitting**
    - Fit a Cox Proportional Hazards model using default hyper-parameters.
 4. **Model Evaluation**
@@ -98,7 +95,8 @@ The primary goal of this analysis is to understand customer behavior over time a
 
 ### D. Churn Distribution Across Tenure Periods under Different Conditions
 <div align=center>
-
+Example Feature: Contract
+   
    ![Churn Distribution Across Tenure Periods under Different Conditions](https://github.com/user-attachments/assets/0c741266-d483-463c-bc1d-62b3f2380212)
 </div>
 
@@ -187,12 +185,12 @@ The primary goal of this analysis is to understand customer behavior over time a
 
 The survival model exhibits strong predictive performance with minimal overfitting, as shown by the following metrics:
 - Concordance Index (C-Index) & C-IndexC (Censored):
-    - Train: 0.9600
-    - Test: 0.9508
+    - Train: 0.9472
+    - Test: 0.9409
     - High agreement between predicted and actual survival rankings, including censored cases.
 - Cumulative Dynamic AUC:
-    - Train: 0.9806
-    - Test: 0.9771
+    - Train: 0.9737
+    - Test: 0.9712
     - Excellent discriminatory ability in time-dependent survival probability estimation.
 - The close alignment between train and test results highlights good generalization and model robustness for survival prediction.
 
@@ -231,12 +229,12 @@ The survival model exhibits strong predictive performance with minimal overfitti
 
 #### c. Covariate Partial Effects
 <div align=center>
-
+Example Covariate: Contract
+   
    ![Covariate Partial Effects](https://github.com/user-attachments/assets/bc0c2856-e72b-4871-98e9-f56a8d3c8887)
-<br>Example with Contract Covariate
 </div>
 
-- In this example, we assess the contract 2 years covariate
+- Since
 
 #### d. Survival Function Curve Based on Hazard Quartiles
 <div align=center>
@@ -244,7 +242,7 @@ The survival model exhibits strong predictive performance with minimal overfitti
    ![Survival Function Curve Based on Hazard](https://github.com/user-attachments/assets/f9c9ffdb-c958-4da1-88df-75817a913bfa)
 </div>
 
-- The model stratifies customers into risk groups very well.
+- The line curves show how well our hazard model 
 
 #### e. Survival Function Curve for Time-to-Event Predictions
 Example with the first 10 customers
