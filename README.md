@@ -180,17 +180,17 @@ Example Feature: Contract
 ### A. Model Evaluation
 <div align=center>
 
-   ![Model Evaluation](https://github.com/user-attachments/assets/583504c0-ffb3-4ed8-8c6c-813dd6941078)
+   ![Model Evaluation](https://github.com/user-attachments/assets/2d6b81c7-e61e-4e22-b31a-5b894523c25e)
 </div>
 
 The survival model exhibits strong predictive performance with minimal overfitting, as shown by the following metrics:
 - Concordance Index (C-Index) & C-IndexC (Censored):
-    - Train: 0.9472
-    - Test: 0.9409
+    - Train: 0.9464
+    - Test: 0.9414
     - High agreement between predicted and actual survival rankings, including censored cases.
 - Cumulative Dynamic AUC:
-    - Train: 0.9737
-    - Test: 0.9712
+    - Train: 0.973
+    - Test: 0.9711
     - Excellent discriminatory ability in time-dependent survival probability estimation.
 - The close alignment between train and test results highlights good generalization and model robustness for survival prediction.
 
