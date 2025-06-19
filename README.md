@@ -36,7 +36,6 @@ The primary goal of this analysis is to understand customer behavior over time a
 5. Assessing the association between categorical features and churn using χ² tests.
 6. Visualizing the Pearson correlation coefficient between churn and each feature using a bar chart.
 
-
 ### B. Survival Function Estimation using the Kaplan-Meier Method (Non-Parametric)
 1. Visualizing the survival function curve and its confidence interval using a line chart.
 2. Visualizing survival curves across the unique values of each categorical feature.
@@ -129,6 +128,7 @@ The primary goal of this analysis is to understand customer behavior over time a
 - Together, `MonthlyCharges`, `TotalCharges`, and `Contract` capture overlapping aspects of tenure and pricing. While not a direct case of data leakage, their interdependence warrants caution—especially with multicollinearity in modeling.
 
 ## 6. Survival Function Estimation
+
 ### Survival Function Curve
 <div align=center>
 
@@ -139,15 +139,9 @@ The primary goal of this analysis is to understand customer behavior over time a
 - After the first month, the curve continues to decline at a consistent pace each month, indicating a steady rate of churn.
 - After 5 years (60 months of tenure), the survival function remains above 65%, indicating long-term retention stability.
 
-### Segmenting survival curves by masking based on each unique categorical feature value.
-#### All Features
-<div align=center>
+2. Visualizing survival curves across the unique values of each categorical feature.
 
-![image](https://github.com/user-attachments/assets/2af3d3c1-46ed-4d2b-8904-d5154022c484)
-</div><br>
-
-- Among all features, Contract feature has the highest Logrank score, that is 2352.9, with signifficant p-value.
-- Only Gender and PhoneService features doesn't have significant p-value (p > 0.05), with logrank score less than 1
+### Survival Curves Across the Unique Values of each Categorical Feature
 
 #### Socio-Demographic Features
 <div align=center>
