@@ -262,18 +262,19 @@ Example Covariate: InternetService
 #### d. Survival Function Curve Based on Hazard Quartiles
 <div align=center>
 
-   ![Survival Function Curve Based on Hazard](https://github.com/user-attachments/assets/f9c9ffdb-c958-4da1-88df-75817a913bfa)
+   ![Hazard Quartiles](https://github.com/user-attachments/assets/a5c03337-6138-481b-a930-17a365f539e5)
 </div>
 
-- The survival curves shows how clearly the hazard model separates customers by quartile-based risk levels.
+- The survival curves clearly demonstrate how well the hazard model separates customers based on quartile-based risk levels.
+- Each curve successfully distinguishes churned from non-churned customers, with the churned group appearing lower and the non-churned group higher, as expected.
 
 #### e. Survival Function Curve for Time-to-Event Predictions
 <div align=center>
 
-   ![Time-to-Event Predictions](https://github.com/user-attachments/assets/e5014783-79d5-4fd6-a0de-c48c592ce069)
+   ![Time-to-Event Predictions](https://github.com/user-attachments/assets/d4121046-7e8d-4803-99fc-ceeeccfdb532)
 </div>
 
-- Using customer samples, as shown in the chart above, the model captures several churn events with good accuracy
+- Using customer samples, as shown in the chart above, the model captures several churn events with good accuracy.
 
 ## 8. Conclusion
 
