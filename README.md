@@ -258,7 +258,7 @@ Example Covariate: InternetService
 - The survival curve for `Fiber optic` declines steadily from the start of the tenure period, falling below 50% after 26 months.
 - After three years, the survival rate for `Fiber optic` drops to 21%, whereas `DSL` and `No InternetService` retain higher rates of 81% and 97%, respectively.
 - By year four, the survival rate for `Fiber optic` falls to 0%, `DSL` declines sharply to 46.5%, while `No InternetService` still maintains a rate above 90%.
-- Beyond year five, only the `No InternetService` category continues to retain a substantial portion of customers, with a survival rate of 68.4%.
+- By year five, only the `No InternetService` category continues to retain a substantial portion of customers, with a survival rate of 68.4%.
 
 #### d. Survival Function Curve Based on Hazard Quartiles
 <div align=center>
