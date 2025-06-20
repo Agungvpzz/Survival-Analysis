@@ -189,7 +189,7 @@ The survival model exhibits strong predictive performance with minimal overfitti
     - Test: 0.9414
     - High agreement between predicted and actual survival rankings, including censored cases.
 - Cumulative Dynamic AUC:
-    - Train: 0.973
+    - Train: 0.9730
     - Test: 0.9711
     - Excellent discriminatory ability in time-dependent survival probability estimation.
 - The close alignment between train and test results highlights good generalization and model robustness for survival prediction.
@@ -203,21 +203,37 @@ The survival model exhibits strong predictive performance with minimal overfitti
 - CoxPHFitter, CoxPHSurvivalAnalysis: Include all columns.
 - cph2, cphsk2: Exclude columns with an insignificant p-value (> 0.05).
 - cph3, cphsk3: Exclude columns with an insignificant logp value (< 10).
+- As shown in the comparison table above, the differences between the models and their combined feature sets are not significant. Therefore, we can select any of them, or strategically opt for the option with the least number of predictors to reduce computational load.
+
+### C. Model Selection
+- After several experiments to identify the optimal combination of predictor sets, we found that `Contract`, `InternetService`, `TotalCharges`, and `TotalCharges (Q)` form the most effective combination, as shown in the table below.
+<div align=center>
+
+   ![Optimized Predictors](https://github.com/user-attachments/assets/b3155773-9c66-4f55-b277-1beb430017bb)
+</div>
+
+- These predictor sets yield higher performance across all evaluation metrics.
+- Concordance Index (C-Index) & C-IndexC (Censored):
+    - Train: 0.9464 -> 0.9565
+    - Test: 0.9414 -> 0.9526
+- Cumulative Dynamic AUC:
+    - Train: 0.9730 -> 0.9788
+    - Test: 0.9711 -> 0.9773   
 
 ### C. Model Visualization
 
 #### a. Feature Coefficients
 <div align=center>
 
-   ![Feature Coefficients](https://github.com/user-attachments/assets/bf96841b-ab2a-4d19-a191-4bb557bbfafa)
+   ![Feature Coefficients](https://github.com/user-attachments/assets/76f74edf-449e-4585-8826-cc8ad8194bea)
 </div>
 
-- The floating bar chart illustrates each covariate’s coefficient along with its confidence interval.
-- Features with insignificant p-values are marked in red, indicating they can be excluded from further interpretation.
-- Among all variables, TotalCharges and Contract emerge as the strongest predictors of churn risk.
-   - TotalCharges behaves as expected: customers who have spent more over time are typically long-term users. As a result, it has a negative coefficient, indicating a reduced hazard of churn.
-   - Given the ranked target mean encoding, the contract type with the highest association to churn is represented by rank 2—corresponding to the Month-to-month plan—which significantly increases churn risk.
-- Coefficients near zero suggest that a covariate has little to no effect on churn risk.
+- The floating bar chart above illustrates each covariate’s coefficient alongside its confidence interval.
+- Among all variables, `TotalCharges (Q)`, `Contract`, and `InternetService` emerge as the strongest predictors of churn risk.
+- As expected, `TotalCharges (Q)` has a negative coefficient—indicating that customers who have spent more over time are typically long-term users and less likely to churn.
+- Since `TotalCharges` is already captured by the quantized version (`TotalCharges (Q)`), its coefficient shrinks close to zero.
+- With ranked target mean encoding applied, the `Contract` type most associated with churn is represented by rank 2—corresponding to the `Month-to-month` plan—which substantially increases churn risk.
+- For `InternetService`, customers with `Fiber optic` (also ranked 2) exhibit a strong positive coefficient (~2), suggesting a higher likelihood of churn. In contrast, customers with "No" internet service (rank 0) are less likely to churn.
 
 #### b. Time-Dependent ROC Curve
 <div align=center>
