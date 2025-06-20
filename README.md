@@ -55,7 +55,8 @@ The primary goal of this analysis is to understand customer behavior over time a
 5. **Model Comparison**
    - Contrast results from the *lifelines* and *scikit-survival* implementations.  
    - Benchmark predictive performance across alternative feature sets.
-6. **Model Visualisation**  
+6. **Model Selection**
+7. **Model Visualisation**  
    - Plot coefficients with their 95 % confidence intervals (bar chart).
    - Plot covariate partial effects to show how within-group changes shift the survival curve (line chart).
    - Draw time-dependent ROC curves to illustrate accuracy over time.
@@ -220,7 +221,7 @@ The survival model exhibits strong predictive performance with minimal overfitti
     - Train: 0.9730 -> 0.9788
     - Test: 0.9711 -> 0.9773   
 
-### C. Model Visualization
+### D. Model Visualization
 
 #### a. Feature Coefficients
 <div align=center>
@@ -278,10 +279,23 @@ Example Covariate: InternetService
 
 ## 8. Conclusion
 
-### A. Survival Analysis
-The survival curve shows three key retention patterns: early churn, steady decline, and long-term loyalty. The 5% drop in the first month suggests many users treat the service as a trial. Consistent month-to-month decline indicates predictable churn rather than sudden spikes. However, strong retention beyond five years (65% survival) highlights a loyal user base. These insights emphasize the need for early engagement strategies to reduce initial churn while sustaining long-term customer relationships.
+### A. Exploratory Data Analysis
+- **Churn Rate**: Approximately 26.5% (1869) of our customers have churned.
+- **Statistical Associations**: All categorical features—except for Gender and PhoneService—show a statistically significant association with Churn.
+- **Tenure and Contract Type Insights**:
+   - The Month-to-month contract type exhibits the highest churn rate, particularly during the first month. Given that this plan is used by the majority of our customers, it underscores the company's vulnerability if it relies solely on short-term contracts without effective customer retention strategies.
+   - The Two-year contract is associated with a higher proportion of customers remaining active for over five years. However, the lower number of newer users on this contract might indicate either a shift in customer preference or the impact of targeted marketing strategies that encourage a move toward short-term contracts.
 
-### B. Hazard Predictive Modelin
+### B. Survival Analysis
+- The survival curve shows three key retention patterns: early churn, steady decline, and long-term loyalty.
+   - The 5% drop in the first month suggests many users treat the service as a trial.
+   - Consistent month-to-month decline indicates predictable churn rather than sudden spikes.
+   - However, strong retention beyond five years (65% survival) highlights a loyal user base.
+   - These insights emphasize the need for early engagement strategies to reduce initial churn while sustaining long-term customer relationships.
+- The survival curve across different conditions show:
+   - 
+
+### C. Hazard Predictive Modelin
 The model demonstrates strong and consistent performance over most of the time range, with only slight degradation in later time periods. This is a good sign in survival modeling, especially for applications like churn prediction, patient risk modeling, or customer lifetime value analysis.
 
 
