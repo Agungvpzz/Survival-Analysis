@@ -238,25 +238,26 @@ The survival model exhibits strong predictive performance with minimal overfitti
 #### b. Time-Dependent ROC Curve
 <div align=center>
 
-   ![Time-Dependent ROC Curve](https://github.com/user-attachments/assets/0e5b9c52-1244-4a12-b58b-4569baf6f869)
+   ![Time-Dependent ROC Curve](https://github.com/user-attachments/assets/fe4aad19-c153-4dbd-8d84-b282afeff2b8)
 </div>
 
-- High initial AUCs: Both training and testing curves start high (~0.97), indicating strong early predictive performance.
+- High initial AUCs: Both training and testing curves start high (~0.95), indicating strong early predictive performance.
 - Stable Mid-range Performance (Tenure 5–40): The AUC remains very high (around 0.99), suggesting the model is performing exceptionally well in this middle range of time.
 - Degradation Over Time (Post-40 Tenure): AUC values for both train and test begin to decline gradually, with a noticeable drop after around tenure 60. This could be due to fewer samples available at longer tenures, or that model generalization weakens over time.
 - Train vs Test Consistency: The test curve closely follows the train curve, indicating good generalization and low overfitting.
 
 #### c. Covariate Partial Effects
 <div align=center>
-Example Covariate: Contract
+Example Covariate: InternetService
    
-   ![Covariate Partial Effects](https://github.com/user-attachments/assets/349b8426-f7e5-4395-aaff-e31a1b957ec7)
+   ![InternetService](https://github.com/user-attachments/assets/1a89003c-fe7e-4809-9ecf-6ea5d24b0f00)
 </div>
 
-- As shown in the chart above, survival curves vary significantly across contract types.
-- After 3 years, the survival rate for `Month-to-month` contract drops to 46%, while `One-year` and `Two-year` contracts retain higher rates of 84% and 96%, respectively.
-- By year 4, `Month-to-month` contract fall further to just 20%, `One-year` contract decline sharply to 41.5%, yet `Two-year` contract still maintain a survival rate above 80%.
-- Beyond year 5, only the `Two-year` contract continues to retain a substantial portion of customers, with a survival rate of 44.7%.
+- As shown in the chart above, survival curves differ significantly across `InternetService` types.
+- The survival curve for `Fiber optic` declines steadily from the start of the tenure period, falling below 50% after 26 months.
+- After three years, the survival rate for `Fiber optic` drops to 21%, whereas `DSL` and `No InternetService` retain higher rates of 81% and 97%, respectively.
+- By year four, the survival rate for `Fiber optic` falls to 0%, `DSL` declines sharply to 46.5%, while `No InternetService` still maintains a rate above 90%.
+- Beyond year five, only the `No InternetService` category continues to retain a substantial portion of customers, with a survival rate of 68.4%.
 
 #### d. Survival Function Curve Based on Hazard Quartiles
 <div align=center>
