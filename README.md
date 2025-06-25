@@ -118,8 +118,8 @@ Example Feature: Contract
 
 ### F. Pearson Correlation Coefficient Between Churn and each Feature
 <div align=center>
-     
-![Pearson Correlation Coefficient Between Churn and each Feature](https://github.com/user-attachments/assets/3319f680-85c4-4afb-8ded-8d5d85ce98ed)
+
+   ![Pearson Correlation Coefficient Between Churn and each Feature](https://github.com/user-attachments/assets/3af87eac-2b47-4bd3-9691-9940a200fb7e)
 </div>
 
 - The bar chart shows that `MonthlyCharges` has a mild positive correlation (~0.20) with churn. This likely reflects pricing differences, as short-term contracts—linked to higher churn—often come with higher monthly costs.
@@ -131,7 +131,7 @@ Example Feature: Contract
 ### A. Survival Function Curve
 <div align=center>
 
-![Survival Function Curve](https://github.com/user-attachments/assets/dd2e19fa-dd26-4305-bd81-3907c51dc596)
+   ![Survival Function Curve](https://github.com/user-attachments/assets/c73b26b9-90d5-4c64-aac3-c8f576fae952)
 </div>
 
 - The most significant drop in the curve occurs within the first month after customers engage, with a 5% decline. This suggests that many users are simply testing the service.
