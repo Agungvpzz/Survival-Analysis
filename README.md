@@ -286,17 +286,27 @@ Example Covariate: InternetService
    - The Month-to-month contract type exhibits the highest churn rate, particularly during the first month. Given that this plan is used by the majority of our customers, it underscores the company's vulnerability if it relies solely on short-term contracts without effective customer retention strategies.
    - The Two-year contract is associated with a higher proportion of customers remaining active for over five years. However, the lower number of newer users on this contract might indicate either a shift in customer preference or the impact of targeted marketing strategies that encourage a move toward short-term contracts.
 
+- **Service Features Insights**:
+   - Customers without internet service demonstrate higher loyalty, with a churn rate of only 7.4%. In contrast, Fiber Optic and DSL users exhibit churn rates of 41.9% and 19.0%, respectively.
+   - Among customers with internet service, those who do not subscribe to any additional services—such as OnlineSecurity, TechSupport, OnlineBackup, or DeviceProtection—experience a significantly higher churn rate of approximately 40%, twice as high as those who subscribe to at least one of these services.
+ 
+- **Socio-Demographc Features Insights**:
+   - Customers without dependents `(Dependents = No)` have a churn rate of 31.3%, which is twice as high as those with dependents (15.5%).
+   - Customers classified as Senior Citizens `(SeniorCitizen = 1, i.e., aged 65 or older)` have a churn rate of 41.7%, nearly double that of non-senior customers (23.6%).
+   - Customers without a partner `(Partner = No)` exhibit a 33.0% churn rate, notably higher than those with a partner (19.7%).
+
 ### B. Survival Analysis
-- The survival curve shows three key retention patterns: early churn, steady decline, and long-term loyalty.
+- In general, the survival curve shows 2 key retention patterns: early churn and steady decline.
    - The 5% drop in the first month suggests many users treat the service as a trial.
-   - Consistent month-to-month decline indicates predictable churn rather than sudden spikes.
-   - However, strong retention beyond five years (65% survival) highlights a loyal user base.
+   - Consistent month-to-month decline indicates predictable churn rather than sudden spikes.   
    - These insights emphasize the need for early engagement strategies to reduce initial churn while sustaining long-term customer relationships.
-- The survival curve across different conditions show:
+- When assess the survival curve across different conditions shows that 
    - 
 
 ### C. Hazard Predictive Modelin
-The model demonstrates strong and consistent performance over most of the time range, with only slight degradation in later time periods. This is a good sign in survival modeling, especially for applications like churn prediction, patient risk modeling, or customer lifetime value analysis.
+- Our model have a good generalization with strong and consistent performance over most of the time range, with only slight degradation in later time periods.
+- Four variables, `Contract`, `InternetService`, `TotalCharges`, and `TotalCharges (Q)`, make a robust and en efective combination for Hazard modeling.
+- 
 
 
 ## 9. Recommendation
