@@ -76,7 +76,7 @@ The primary goal of this analysis is to understand customer behavior over time a
 ### B. Churn Composition Across Categorical Features
 <div align=center>
 
-   ![Churn Composition Across Categorical Features](https://github.com/user-attachments/assets/8ceb5b6e-d7af-459b-9272-0932a557c3a5)
+   ![Churn Composition Across Categorical Features](https://github.com/user-attachments/assets/19181235-6b43-4277-8b6b-861358014d46)
 </div>
 
 - Sorted by chi-square (χ²) values, the bar chart highlights how churn composition varies across each categorical feature.
