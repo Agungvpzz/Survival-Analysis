@@ -300,8 +300,9 @@ Example Covariate: InternetService
    - The 5% drop in the first month suggests many users treat the service as a trial.
    - Consistent month-to-month decline indicates predictable churn rather than sudden spikes.   
    - These insights emphasize the need for early engagement strategies to reduce initial churn while sustaining long-term customer relationships.
-- When assess the survival curve across different conditions shows that 
-   - 
+- interestingly, when we assess the survival curve across different `Contract` types, we found out 3 diffeent unique patterns:
+   - `Month-to-month` type, the highest shows how 
+
 
 ### C. Hazard Predictive Modelin
 - Our model have a good generalization with strong and consistent performance over most of the time range, with only slight degradation in later time periods.
