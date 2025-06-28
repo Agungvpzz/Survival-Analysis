@@ -219,7 +219,13 @@ The survival model exhibits strong predictive performance with minimal overfitti
     - Test: 0.9414 -> 0.9526
 - Cumulative Dynamic AUC:
     - Train: 0.9730 -> 0.9788
-    - Test: 0.9711 -> 0.9773   
+    - Test: 0.9711 -> 0.9773
+- Summary:
+<div align=center>
+   
+   ![image](https://github.com/user-attachments/assets/b1b6d964-eb96-4da0-a0ef-fcccea45f671)
+</div>
+
 
 ### D. Model Visualization
 
