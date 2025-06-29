@@ -80,10 +80,22 @@ The primary goal of this analysis is to understand customer behavior over time a
 </div>
 
 - Sorted by chi-square (χ²) values, the bar chart highlights how churn composition varies across each categorical feature.
-- As expected, the Contract feature reflects customers’ initial subscription agreements over specific time periods.
-   - Although the monthly contract type has the highest churn rate, it still accounts for the largest share of active customers compared to other contract types.
-- Other features, as shown in the chart, demonstrate significant differences in churn composition based on their `chi²` values—except for `Gender` and `PhoneService`, which show weak or negligible associations.
+- **Socio-Demographic Features**:
+   - `Senior Citizen`: Senior citizen customers (age >= 65) has 41.68% churn rate, almost twice higher than who are not (23.61%).
+   - `Dependents`: Customers who live without any dependents has 31.28% churn rate, twice higher than who do (15.45%).
+   - `Partner`: Coupled customers has 32.96% churn rate, quite notable higher than the single (19.66%).
+- **Payment Features**:
+   - `Contract`: Customers with monthly contract type has 42.7% churn rate, multiple times higher than other types, and accounts for the largest portions customers (55%). 
+   - `Payment Method`: Customers who use electronic check payment method has 45.29% churn rate, almost three times higher than other methods.
+   - `PaperlessBilling`: Customers who use paperless billing has 33.57% churn rate, twice higher than who are not (16.33%).
+- **Service Features**:
+   - `InternetService`: Customers who use fiber optic as their internet service has 41.89% churn rate, twice higher than DSL users (18.96%), and almost six times higher than who don't use internet service.
+      - The segregation between the internet user and non-internet user apply to the following columns: `OnlineSecurity`, `OnlineBackup`, `DeviceProtection`, `TechSupport`, `StreamingTV`, `StreamingMovies`.
+   - `OnlineSecurity`: Customers who didn't subscribe the online security service has 41.77% churn rate. Nearly three times higher than who did.
+   - `TechSupport`: Customers who didn't subscribe the tech support service has 41.64% churn rate. Almost three times higher than who did.
+   - `OnlineBackup`: Customers who are not using online backup service, has 39.93 churn rate, nearly twice higher than who are using it.
 
+  
 ### C. Churn Distribution Across Tenure Periods
 <div align=center>
 
@@ -112,8 +124,8 @@ Example Feature: Contract
    ![chi2 tests](https://github.com/user-attachments/assets/446d77a1-a64b-47dc-bf7a-3cd0f5a1db34)
 </div>
 
-- As shown in the table, Gender and PhoneService have high p-values, indicating no significant association with churn; therefore, we exclude them from the hazard modeling process.
-- The remaining categorical features exhibit statistically significant p-values, supporting their inclusion in the model.
+- As expected, the Contract feature reflects customers’ initial subscription agreements over specific time periods.
+- Other features, as shown in the chart, demonstrate significant differences in churn composition based on their `chi²` values—except for `Gender` and `PhoneService`, which show weak or negligible associations.
 
 
 ### F. Pearson Correlation Coefficient Between Churn and each Feature
