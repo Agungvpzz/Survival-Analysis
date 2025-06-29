@@ -255,7 +255,7 @@ The survival model exhibits strong predictive performance with minimal overfitti
 - The floating bar chart above illustrates each covariate’s coefficient alongside its confidence interval.
 - Among all variables, `TotalCharges (Q)`, `Contract`, and `InternetService` emerge as the strongest predictors of churn risk.
 - As expected, `TotalCharges (Q)` has a negative coefficient—indicating that customers who have spent more over time are typically long-term users and less likely to churn.
-- Since `TotalCharges` is already captured by the quantized version (`TotalCharges (Q)`), its coefficient shrinks close to zero.
+- Since the unit value of `TotalCharges` is in dollars, its coefficient approaches zero, representing the effect of each additional dollar increase.
 - With ranked target mean encoding applied, the `Contract` type most associated with churn is represented by rank 2—corresponding to the `Month-to-month` plan—which substantially increases churn risk.
 - For `InternetService`, customers with `Fiber optic` (also ranked 2) exhibit a strong positive coefficient (~2), suggesting a higher likelihood of churn. In contrast, customers with "No" internet service (rank 0) are less likely to churn.
 
