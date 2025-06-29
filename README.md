@@ -318,6 +318,11 @@ Example Covariate: InternetService
    - Customers classified as Senior Citizens `(SeniorCitizen = 1, i.e., aged 65 or older)` have a churn rate of 41.7%, nearly double that of non-senior customers (23.6%).
    - Customers without a partner `(Partner = No)` exhibit a 33.0% churn rate, notably higher than those with a partner (19.7%).
 
+- **Payment Features Insights**:
+  - Customers who use the electronic check payment method have a churn rate of 45.29%, which is twice as high as those using other payment methods.
+  - Customers enrolled in paperless billing have a churn rate of 33.57%, roughly double that of customers who are not (16.33%).
+
+
 ### B. Survival Analysis
 - In general, the survival curve shows 2 key retention patterns: early churn and steady decline.
    - The 5% drop in the first month suggests many users treat the service as a trial.
