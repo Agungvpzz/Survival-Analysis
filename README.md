@@ -80,6 +80,7 @@ The primary goal of this analysis is to understand customer behavior over time a
 </div>
 
 - Sorted by chi-square (χ²) values, the bar chart highlights how churn composition varies across each categorical feature.
+- According to the graph above, we spotlight several insights based on feature grouping below.
 - **Socio-Demographic Features**:
    - `Senior Citizen`: Senior citizen customers (age >= 65) has 41.68% churn rate, almost twice higher than who are not (23.61%).
    - `Dependents`: Customers who live without any dependents has 31.28% churn rate, twice higher than who do (15.45%).
