@@ -226,18 +226,22 @@ The survival model exhibits strong predictive performance with minimal overfitti
    ![image](https://github.com/user-attachments/assets/b1b6d964-eb96-4da0-a0ef-fcccea45f671)
 </div>
    
-   - Since we encoded our categorical variable with rank mean target encoding (with rank 1 represent the lowest churn rate), we assume that each categorical variable have linear relationship within its unique value. 
+   - Since we encoded our categorical variables using rank‐mean target encoding (rank 1 = lowest churn), we assume a linear effect across ranks.
    - All predictors are statistically significant (p ≈ 0.0).
-   - `TotalCharges (Q)` | coef = -1.787, exp(coef) = 0.168:
-      - A one-unit increase in TotalCharges(Q) (e.g., Q1 -> Q2) reduces the hazard rate by approximately 83.2%.
-   - `TotalCharges` | coef = -0.001, exp(coef) = 0.999:
-      - Every dollar increase in total charges slightly reduces the risk of churn by 0.001%.
-   - `Contract` (rank encoded: 0=Two year → 1=One year -> 2=Month-to-month) | coef = 1.578, exp(coef) = 4.846:
-      - A one-unit increase in Contract (e.g., Two year → One year) multiplies churn risk by ~4.8 times.
-      - Going from Two year (0) to Month-to-month (2) increases the hazard by exp(1.578 × 2) ≈ 23.5×. Very strong effect.
-   - `InternetService` (rank encoded: 0=No → 1=DSL -> 2=Fiber optic) | coef = 2.006, exp(coef) = 7.430:
-      - A one-unit increase (e.g., No service → DSL) increases hazard ~7.4 times.
-      - Going from No internet (0) to Fiber optic (2): exp(2.006 × 2) ≈ 55× increased churn risk.
+   - `TotalCharges (Q)`:
+      - coef = –1.787, HR = exp(–1.787) = 0.168
+      - A one‐quantile increase in TotalCharges (e.g. Q1 → Q2) reduces the hazard by ~83.2% (1 – 0.168).
+   - `TotalCharges`:
+      - coef = –0.001, HR = exp(–0.001) = 0.999
+      - Each extra dollar in TotalCharges cuts the churn hazard by ≈ 0.1%.
+   - `Contract` (0=Two-year → 1=One-year → 2=Month-to-month):
+      - coef = 1.578, HR = exp(1.578) = 4.846
+      - A one-rank step (e.g. Two-year → One-year) multiplies churn risk by ~4.85×.
+      - Moving from Two-year (0) to Month-to-month (2) (Δ=2 ranks) multiplies hazard by exp(1.578 × 2) ≈ 23.5×.
+   - `InternetService` (0=No → 1=DSL → 2=Fiber):
+      - coef = 2.006, HR = exp(2.006) = 7.430
+      - A one-rank step (No → DSL) multiplies hazard by ~7.43×.
+      - Going from No Internet (0) to Fiber (2) multiplies hazard by exp(2.006 × 2) ≈ 55×.
 
 
 ### D. Model Visualization
