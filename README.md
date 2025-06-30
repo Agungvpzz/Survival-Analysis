@@ -103,9 +103,9 @@ The primary goal of this analysis is to understand customer behavior over time a
    ![Churn Distribution Across Tenure Periods](https://github.com/user-attachments/assets/3b2767f2-638d-400b-8286-259eca0bca47)
 </div>
 
-- The bar chart reveals a sharp spike in churn (around 380 customers) early in the customer lifecycle. This suggests many users leave shortly after joining—possibly due to onboarding issues, unmet expectations, or a misalignment between product and customer needs.
-- After this initial drop-off, churn steadily declines and stabilizes. This trend may indicate that customers who remain beyond the first few months are more likely to stay loyal, or that those who churn early differ significantly from long-term users.
-
+- The bar chart reveals a sharp spike in churn (around 380 customers) early in the customer lifecycle. This suggests that many users leave shortly after joining, possibly due to onboarding issues, unmet expectations, or a mismatch between the product and customer needs.
+- After this initial drop-off, churn steadily declines and then levels out. This trend may indicate that customers who stick around past the first few months are more likely to stay loyal, or that early churners differ meaningfully from long-term users.
+- Toward the end of the tenure periods, the chart shows an increase in the number of customers who have stayed for over five years. This hints that the earliest customers — especially those from the first three months — tend to be the most loyal.
 
 ### D. Churn Distribution Across Tenure Periods under Different Conditions
 <div align=center>
