@@ -184,11 +184,11 @@ Example Feature: Contract
    - After the first year, the survival curve continues a slow but steady descent.
    - Annual churn becomes more gradual, with ~5% decrease in survival probability per year.
    - In total, the distribution of churned users across each year is approximately:
-      - Year 2: 16% of all churned users occurred (corresponding to a ~5 percentage point drop in survival curve)
-      - Year 3: 9% of churned users (~4% drop in survival)
-      - Year 4: 8% (~4% drop)
-      - Year 5: 7% (~5% drop)
-      - Year 6: 5% (~7% drop)
+      - Year 2: 16% of all churned users occurred (corresponding to a ~5 percentage point drop in survival curve)
+      - Year 3: 9% of churned users (~4% drop in survival)
+      - Year 4: 8% (~4% drop)
+      - Year 5: 7% (~5% drop)
+      - Year 6: 5% (~7% drop)
    - This pattern reflects ongoing but less concentrated attrition, likely driven by long-term changes in customer needs, emerging alternatives, or a gradual decline in perceived value.
 
 ### B. Survival Curves Across the Unique Values of each Categorical Feature
