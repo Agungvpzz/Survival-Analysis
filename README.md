@@ -164,12 +164,15 @@ Example Feature: Contract
 ### A. Survival Function Curve
 <div align=center>
 
-   ![Survival Function Curve](https://github.com/user-attachments/assets/c73b26b9-90d5-4c64-aac3-c8f576fae952)
+   ![Survival Function Curve](https://github.com/user-attachments/assets/c73b26b9-90d5-4c64-aac3-c8f576fae952)<br>
+   ![Survival Function Curve Report](https://github.com/user-attachments/assets/dfa1d9d5-ccc5-4d23-9562-e88be6ec133d)
 </div>
 
-- The most significant drop in the curve occurs within the first month after customers engage, with a 5% decline. This suggests that many users are simply testing the service.
-- After the first month, the curve continues to decline at a consistent pace each month, indicating a steady rate of churn.
-- After 5 years (60 months of tenure), the survival function remains above 65%, indicating long-term retention stability.
+- The survival curve reveals three key patterns in customer retention:
+   - Early Churn (First Month): The steepest drop around 5% that occurs within the first month of customer engagement. This likely reflects a segment of users who are simply testing the service and decide not to continue.
+   - Steady Decline (Month 2 to Year 5): After the initial drop, the survival curve shows a consistent downward trend over time, suggesting a stable rate of monthly churn during this period.
+   - Loyalist Curve (After 5 Years): Beyond the five-year mark, the survival function remains above 65%, indicating long-term retention and customer loyalty. This trend may be influenced by an increasing number of censored observations, with a notable peak at a tenure of 72 months—where 356 customers are right-censored.
+- 
 
 ### B. Survival Curves Across the Unique Values of each Categorical Feature
 
