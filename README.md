@@ -80,21 +80,21 @@ The primary goal of this analysis is to understand customer behavior over time a
 </div>
 
 - Sorted by chi-square (χ²) values, the bar chart highlights how churn composition varies across each categorical feature.
-- According to the graph above, we spotlight several insights based on feature grouping below.
+- Based on the graph above, we spotlight several insights by feature grouping below.
 - **Socio-Demographic Features**:
-   - `Senior Citizen`: Senior citizen customers (age >= 65) has 41.68% churn rate, almost twice higher than who are not (23.61%).
-   - `Dependents`: Customers who live without any dependents has 31.28% churn rate, twice higher than who do (15.45%).
-   - `Partner`: Coupled customers has 32.96% churn rate, quite notable higher than the single (19.66%).
+   - `Senior Citizen`: Senior customers (age ≥ 65) have a 41.68% churn rate, almost twice as high as non-seniors (23.61%).
+   - `Dependents`: Customers without dependents have a 31.28% churn rate, nearly twice as high as those with dependents (15.45%).
+   - `Partner`: Customers with partners have a 32.96% churn rate, notably higher than those who are single (19.66%).
 - **Payment Features**:
-   - `Contract`: Customers with monthly contract type has 42.7% churn rate, multiple times higher than other types, and accounts for the largest portions customers (55%). 
-   - `Payment Method`: Customers who use electronic check payment method has 45.29% churn rate, almost three times higher than other methods.
-   - `PaperlessBilling`: Customers who use paperless billing has 33.57% churn rate, twice higher than who are not (16.33%).
+   - `Contract`: Customers on monthly contracts have a 42.7% churn rate—significantly higher than other types—and represent the largest customer group (55%).
+   - `Payment Method`: Those using electronic check as a payment method show a 45.29% churn rate, nearly three times higher than other methods.
+   - `PaperlessBilling`: Customers enrolled in paperless billing have a 33.57% churn rate, more than double that of those who are not (16.33%).
 - **Service Features**:
-   - `InternetService`: Customers who use fiber optic as their internet service has 41.89% churn rate, twice higher than DSL users (18.96%), and almost six times higher than who don't use internet service.
-      - The segregation between the internet user and non-internet user apply to the following columns: `OnlineSecurity`, `OnlineBackup`, `DeviceProtection`, `TechSupport`, `StreamingTV`, `StreamingMovies`.
-   - `OnlineSecurity`: Customers who didn't subscribe the online security service has 41.77% churn rate. Nearly three times higher than who did.
-   - `TechSupport`: Customers who didn't subscribe the tech support service has 41.64% churn rate. Almost three times higher than who did.
-   - `OnlineBackup`: Customers who are not using online backup service, has 39.93 churn rate, nearly twice higher than who are using it.
+   - `InternetService`: Customers with internet service (either fiber optic or DSL) show significantly higher churn compared to those without. Specifically, fiber optic users have a 41.89% churn rate—more than twice that of DSL users (18.96%), and nearly six times that of customers without internet service.
+      - This distinction between internet users and non-users also impacts related features: `OnlineSecurity`, `OnlineBackup`, `DeviceProtection`, `TechSupport`, `StreamingTV`, and `StreamingMovies`.
+   - `OnlineSecurity`: Customers without this service experience a 41.77% churn rate—nearly three times higher than subscribers.
+   - `TechSupport`: Those lacking tech support show a 41.64% churn rate—almost triple that of users with support.
+   - `OnlineBackup`: Customers not using online backup have a 39.93% churn rate, nearly twice as high as users who do.
 
   
 ### C. Churn Distribution Across Tenure Periods
