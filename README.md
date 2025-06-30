@@ -165,14 +165,31 @@ Example Feature: Contract
 <div align=center>
 
    ![Survival Function Curve](https://github.com/user-attachments/assets/c73b26b9-90d5-4c64-aac3-c8f576fae952)<br>
-   ![Survival Function Curve Report](https://github.com/user-attachments/assets/dfa1d9d5-ccc5-4d23-9562-e88be6ec133d)
+   ![Survival Function Curve Report](https://github.com/user-attachments/assets/a7e9dece-6154-4368-b44d-77e180fb7543)
 </div>
 
-- The survival curve reveals three key patterns in customer retention:
-   - Early Churn (First Month): The steepest drop around 5% that occurs within the first month of customer engagement. This likely reflects a segment of users who are simply testing the service and decide not to continue.
-   - Steady Decline (Month 2 to Year 5): After the initial drop, the survival curve shows a consistent downward trend over time, suggesting a stable rate of monthly churn during this period.
-   - Loyalist Curve (After 5 Years): Beyond the five-year mark, the survival function remains above 65%, indicating long-term retention and customer loyalty. This trend may be influenced by an increasing number of censored observations, with a notable peak at a tenure of 72 months—where 356 customers are right-censored.
-- 
+- The survival curve reveals Three key patterns in customer retention
+
+- **Early Churn (First Month)**:
+  - The steepest drop in the survival curve, about 5%, occurs within the first month of customer engagement.
+  - Approximately 20% of all churned customers leave during this initial period.
+  - This suggests that a substantial segment of users are evaluating the service and decide to discontinue early, likely due to unmet expectations or poor initial experience.
+
+- **High-Risk Period (Month 1 to Month 12)**:
+   - From month 1 through month 12, the survival probability declines further from ~95% to ~84%, a drop of over 10 percentage points.
+   - During this period, about 1,000 customers, roughly 55% of all churned users, choose to exit the service.
+   - This one-year window is a critical phase for customer retention efforts, as many users exit before forming long-term habits or commitments.
+
+- **Gradual Decline (After Month 12)**:
+   - After the first year, the survival curve continues a slow but steady descent.
+   - Annual churn becomes more gradual, with ~5% decrease in survival probability per year.
+   - In total, the distribution of churned users across each year is approximately:
+      - Year 2: 16% of all churned users occurred (corresponding to a ~5 percentage point drop in survival curve)
+      - Year 3: 9% of churned users (~4% drop in survival)
+      - Year 4: 8% (~4% drop)
+      - Year 5: 7% (~5% drop)
+      - Year 6: 5% (~7% drop)
+   - This pattern reflects ongoing but less concentrated attrition, likely driven by long-term changes in customer needs, emerging alternatives, or a gradual decline in perceived value.
 
 ### B. Survival Curves Across the Unique Values of each Categorical Feature
 
