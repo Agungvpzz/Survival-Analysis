@@ -299,6 +299,7 @@ The survival model exhibits strong predictive performance with minimal overfitti
 
 ### D. Model Visualization
 
+
 #### a. Feature Coefficients
 <div align=center>
 
@@ -306,11 +307,12 @@ The survival model exhibits strong predictive performance with minimal overfitti
 </div>
 
 - The floating bar chart above illustrates each covariate’s coefficient alongside its confidence interval.
-- Among all variables, `TotalCharges (Q)`, `Contract`, and `InternetService` emerge as the strongest predictors of churn risk.
+- Among all variables, `TotalCharges (Q)`, `Contract`, and `InternetService` emerge as the strongest predictors of churn risk. These categorical variables influence the hazard function in discrete steps, causing distinct jumps in the predicted risk. Meanwhile, TotalCharges, being continuous, contributes to a smoother, more gradual shift in risk. These distinct shifts often result in larger coefficient magnitudes for categorical predictors.
 - As expected, `TotalCharges (Q)` has a negative coefficient, indicating that customers who have spent more over time are typically long-term users and less likely to churn.
 - Since the unit value of `TotalCharges` is in dollars, its coefficient approaches zero, representing the effect of each additional dollar increase.
 - With ranked target mean encoding applied, the `Contract` type most associated with churn is represented by rank 2, corresponding to the `Month-to-month` plan, which substantially increases churn risk.
 - For `InternetService`, customers with `Fiber optic` (also ranked 2) exhibit a strong positive coefficient (~2), suggesting a higher likelihood of churn. In contrast, customers with "No" internet service (rank 0) are less likely to churn.
+
 
 #### b. Time-Dependent ROC Curve
 <div align=center>
