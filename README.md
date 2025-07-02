@@ -236,9 +236,8 @@ Example Feature: Contract
 #### a. Socio-Demographic Features
 <div align=center>
      
-   ![Socio-Demographic Features](https://github.com/user-attachments/assets/bb91b34a-9782-4876-b537-c25a3128318e)
-   ![image](https://github.com/user-attachments/assets/3d5b6e69-c7ae-4a94-a80d-4fe5221ad8a3)
-   ![image](https://github.com/user-attachments/assets/7f8b5324-2f4b-4d19-99f7-937508c6fb17)
+   ![Socio-Demographic Features](https://github.com/user-attachments/assets/bb91b34a-9782-4876-b537-c25a3128318e)   
+   ![Socio-Demographic Features-Times](https://github.com/user-attachments/assets/7f8b5324-2f4b-4d19-99f7-937508c6fb17)
 
 </div>
 
@@ -246,7 +245,7 @@ Example Feature: Contract
 - Final survival (%) below 50%:
   - `Partner | No`: 46.32%
   - `SeniorCitizen | 1`: 42.13%
-- Significant survival drop by tenure for each categorical value (%):
+- Marked differences in mean survival drop by tenure across categorical values (%):
   - `Dependents`: 0.66% → 0.34% (`Dependents | No` → `Dependents | Yes`)
   - `Partner`: 0.74% → 0.42% (`Partner | No` → `Partner | Yes`)
   - `SeniorCitizen`: 0.79% → 0.50% (`SeniorCitizen | 1` → `SeniorCitizen | 0`)
@@ -261,10 +260,30 @@ Example Feature: Contract
 #### b. Product/Service Features
 <div align=center>
      
-   ![Service Features](https://github.com/user-attachments/assets/7ad66081-8b99-429d-b088-af1692fec09e)   
+   ![Service Features](https://github.com/user-attachments/assets/7ad66081-8b99-429d-b088-af1692fec09e)
+   ![Service Features-Times](https://github.com/user-attachments/assets/9f524cc3-a5c7-4a3c-b74c-ac16d690a836)
+
 </div>
 
-- All product and service features, except PhoneService, show a significant p-value.
+- All product and service features, except `PhoneService`, show a significant p-value.  
+- Final survival (%) below 50%:
+  - `InternetService | Fiber optic`: 41.70%
+  - `OnlineBackup | No`: 39.23%
+  - `OnlineSecurity | No`: 33.09%
+  - `TechSupport | No`: 34.92%
+- Marked differences in mean survival drop by tenure across categorical values (%):
+  - `InternetService`: 0.80% → 0.13% (`InternetService | Fiber optic` → `InternetService | No`)
+  - `OnlineBackup`: 0.83% → 0.45% (`OnlineBackup | No` → `OnlineBackup | Yes`)
+  - `OnlineSecurity`: 0.92% → 0.31% (`OnlineSecurity | No` → `OnlineSecurity | Yes`)
+  - `TechSupport`: 0.89% → 0.33% (`TechSupport | No` → `TechSupport | Yes`)
+- Churn Concentration (average across different categorical features):
+  - In the first year of tenure, an average of 59.8% of churned customers leave.     
+  - By 24.0 tenure points (2 years), more than half (73.4%) of churned customers have left.
+    - At this tenure point, only 46.85% of churned customers under `OnlineBackup | Yes` had exited, indicating delayed churn compared to other groups.
+    - Meanwhile, under `InternetService | No`, approximately 90% of churned customers had already left by this point in tenure.
+- Notable Insights:
+  - 51.3% of churned customers under `InternetService | No` leave within the first month (one month after subscribing).
+  - Despite this early churn, customers under `InternetService | No` retain a final survival rate of 90% by the end of the tenure period.
 
 
 #### c. Payment Features
