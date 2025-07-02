@@ -242,19 +242,19 @@ Example Feature: Contract
 </div>
 
 - Among all socio-demographic features, only `Gender` did not reach statistical significance.  
-- Final survival (%) below 50%:
-  - `Partner | No`: 46.32%
-  - `SeniorCitizen | 1`: 42.13%
-- Marked differences in mean survival drop by tenure across categorical values (%):
-  - `Dependents`: 0.66% → 0.34% (`Dependents | No` → `Dependents | Yes`)
-  - `Partner`: 0.74% → 0.42% (`Partner | No` → `Partner | Yes`)
-  - `SeniorCitizen`: 0.79% → 0.50% (`SeniorCitizen | 1` → `SeniorCitizen | 0`)
-- Churn Concentration:
-  - In the first year of tenure, an average of 52.6% of churned customers leave.
-  - By 24.0 tenure points (2 years), more than half (68.78%) of churned customers have left.
+- Final Survival (%) Below 50%:
+   - `Partner | No`: 46.32% (drops below 50% at the 68th tenure period)
+   - `SeniorCitizen | 1`: 42.13% (drops below 50% at the 65th tenure period)
+- Marked Differences in Mean Survival Drop by Tenure Across Categorical Values (%):
+   - `Dependents`: 0.66% vs 0.34% (`Dependents | No` vs `Dependents | Yes`)
+   - `Partner`: 0.74% vs 0.42% (`Partner | No` vs `Partner | Yes`)
+   - `SeniorCitizen`: 0.79% vs 0.50% (`SeniorCitizen | 1` vs `SeniorCitizen | 0`)
+- Churn Concentration (Average Across Different Categorical Features):
+   - In the first year of tenure, an average of 52.6% of churned customers leave.
+   - By 24.0 tenure points (2 years), more than half (68.78%) of churned customers have left.
 - Notable Insights:
-  - `Partner`: First-month churn difference between `Partner | No` (26.17%) and `Partner | Yes` (9.87%)
-  - All demographic features—except `Gender`, exhibit approximately a 20% difference in final survival rates across their unique values.
+   - `Partner`: First-month churn difference between `Partner | No` (26.17%) and `Partner | Yes` (9.87%)
+   - All demographic features—except `Gender`, exhibit approximately a 20% difference in final survival rates across their unique values.
 
 
 #### b. Product/Service Features
@@ -266,32 +266,53 @@ Example Feature: Contract
 </div>
 
 - All product and service features, except `PhoneService`, show a significant p-value.  
-- Final survival (%) below 50%:
-  - `InternetService | Fiber optic`: 41.70%
-  - `OnlineBackup | No`: 39.23%
-  - `OnlineSecurity | No`: 33.09%
-  - `TechSupport | No`: 34.92%
-- Marked differences in mean survival drop by tenure across categorical values (%):
-  - `InternetService`: 0.80% → 0.13% (`InternetService | Fiber optic` → `InternetService | No`)
-  - `OnlineBackup`: 0.83% → 0.45% (`OnlineBackup | No` → `OnlineBackup | Yes`)
-  - `OnlineSecurity`: 0.92% → 0.31% (`OnlineSecurity | No` → `OnlineSecurity | Yes`)
-  - `TechSupport`: 0.89% → 0.33% (`TechSupport | No` → `TechSupport | Yes`)
-- Churn Concentration (average across different categorical features):
-  - In the first year of tenure, an average of 59.8% of churned customers leave.     
-  - By 24.0 tenure points (2 years), more than half (73.4%) of churned customers have left.
-    - At this tenure point, only 46.85% of churned customers under `OnlineBackup | Yes` had exited, indicating delayed churn compared to other groups.
-    - Meanwhile, under `InternetService | No`, approximately 90% of churned customers had already left by this point in tenure.
+- Final Survival (%) Below 50%:
+   - `InternetService | Fiber optic`: 41.70% (drops below 50% at 65th tenure period)
+   - `OnlineBackup | No`: 39.23% (drops below 50% at 52th tenure period)
+   - `OnlineSecurity | No`: 33.09% (drops below 50% at 53thtenure period)
+   - `TechSupport | No`: 34.92% (drops below 50% at 53th tenure period)
+- Marked Differences in Mean Survival Drop by Tenure Across Categorical Values (%):
+   - `InternetService`: 0.80% vs 0.13% (`InternetService | Fiber optic` vs `InternetService | No`)
+   - `OnlineBackup`: 0.83% vs 0.45% (`OnlineBackup | No` vs `OnlineBackup | Yes`)
+   - `OnlineSecurity`: 0.92% vs 0.31% (`OnlineSecurity | No` vs `OnlineSecurity | Yes`)
+   - `TechSupport`: 0.89% vs 0.33% (`TechSupport | No` vs `TechSupport | Yes`)
+- Churn Concentration (Average Across Different Categorical Features):
+   - In the first year of tenure, an average of 59.8% of churned customers leave.
+   - By 24.0 tenure points (2 years), more than half (73.4%) of churned customers have left.
+     - At this tenure point, only 46.85% of churned customers under `OnlineBackup | Yes` had exited, indicating delayed churn compared to other groups.
+     - Meanwhile, under `InternetService | No`, approximately 90% of churned customers had already left by this point in tenure.
 - Notable Insights:
-  - 51.3% of churned customers under `InternetService | No` leave within the first month (one month after subscribing).
-  - Despite this early churn, customers under `InternetService | No` retain a final survival rate of 90% by the end of the tenure period.
+   - 51.3% of churned customers under `InternetService | No` leave within the first month (one month after subscribing).
+   - Despite this early churn, customers under `InternetService | No` retain a final survival rate of 90% by the end of the tenure period.
 
 
 #### c. Payment Features
 <div align=center>
      
-   ![Payment Features](https://github.com/user-attachments/assets/e87d71e5-7986-4cb9-a973-9a4ff8f65a67)   
+   ![Payment Features](https://github.com/user-attachments/assets/e87d71e5-7986-4cb9-a973-9a4ff8f65a67)
+   ![Payment Features-Times](https://github.com/user-attachments/assets/bd19dcd4-313e-483f-a2e0-4a243705dd45)
+
 </div>
 
+- All payment features, especially `Contract`, show a significant p-value.
+- Final Survival (%) Below 50%:
+  - `Contract | Month-to-month`: 12.90% (drops below 50% at 35th tenure period)
+  - `PaymentMethod | Electronic check`: 29.45% (drops below 50% at 47th tenure period)
+- Marked Differences in Mean Survival Drop by Tenure Across Categorical Values (%):
+  - `Contract`: 1.19% vs 0.09% (`Contract | Month-to-month` vs `Contract | Two year`)
+  - `PaperlessBilling`: 0.67% vs 0.36%	(`PaperlessBilling | Yes` vs `PaperlessBilling | No`)
+  - `PaymentMethod`: 0.97% vs 0.33% (`PaymentMethod | Electronic check` vs `PaymentMethod | Credit card (automatic)`)  
+- Churn Concentration (Average Across Different Categorical Features):
+  - In the first year of tenure, an average of 44.1% of churned customers leave.
+     - Customers with `one- or two-year` contracts tend to stick to their agreements, with under 10% of churned customers.
+     - 80.19% of churned customers using `PaymentMethod | Mailed check` have already left.
+  - By the 24th tenure period (2 years), more than half (56.7%) of churned customers have left.
+     - Even after 2 years, no customer under `Contract | Two year` has churned.
+     - Meanwhile, around 17.5% of churned customers under `Contract | One year` have left.
+     - Shockingly, about 90% of churned customers using `PaymentMethod | Mailed check` have churned by this point.
+- Notable Insights:
+  - 41.88% of churned customers using `PaymentMethod | Mailed check` leave within the first month (one month after subscribing).
+  - `Contract | Two year` shows the highest final survival rate at 93.57%, meanwhile the `Contract | Month-to-month` has the lowest at 12.9%.
 
 
 ## H. Hazard Modeling
