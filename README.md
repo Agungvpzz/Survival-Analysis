@@ -168,8 +168,8 @@ Example Feature: Contract
    ![Socio-Demographic Features Table](https://github.com/user-attachments/assets/52db90b9-b2bf-4106-b837-7f2d7c1e7741)
 </div>
 
-- Customers who have a partner, are not senior citizens, and live with dependents have the lowest churn rate, at only 13.75%.
-- Customers who have no partner, are senior citizens, and have no dependents exhibit the highest churn rate, approaching 50%.
+- Customers who `have a partner`, are `not senior citizens`, and `live with dependents` have the lowest churn rate, at only 13.75%.
+- Customers who `have no partner`, are `senior citizens`, and `have no dependents` exhibit the highest churn rate, approaching 50%.
 
 
 #### b. Service Features
@@ -179,9 +179,10 @@ Example Feature: Contract
    ![Service Features Table](https://github.com/user-attachments/assets/9ad999c4-811f-4b4c-9302-93d6f195f9fc)
 </div>
 
-- Customers who subscribe to DSL internet service along with both OnlineBackup and OnlineSecurity have the lowest churn rate at 6.75%. However, when they do not subscribe to these services (OnlineBackup and OnlineSecurity), the churn rate increases significantly to 34.6%.
-- Customers without internet service have a churn rate of 7.4%.
-- Customers who subscribe only to Fiber Optic internet service, without OnlineBackup and OnlineSecurity, have the highest churn rate at 55.8%.
+- Customers who subscribe to `DSL internet service along with both OnlineBackup and OnlineSecurity` have the lowest churn rate at 6.75%.
+   - However, when they `do not subscribe to these services (OnlineBackup and OnlineSecurity)`, the churn rate increases significantly to 34.6%.
+- Customers `without internet service` have a churn rate of 7.4%.
+- Customers who subscribe `only to Fiber Optic internet service`, without OnlineBackup and OnlineSecurity, have the highest churn rate at 55.8%.
 
 
 #### c. Payment Features
@@ -191,9 +192,11 @@ Example Feature: Contract
    ![Payment Features Table](https://github.com/user-attachments/assets/216c63e3-22ef-4190-a12a-dd3a85952c00)
 </div>   
 
-- Customers with a two-year contract generally have a churn rate of only 2.83%. Among them, those who use Mailed Check as their payment method and opt for manual (non-paperless) billing have the lowest churn rate at just 0.37%. Conversely, the highest churn rate within this group is 9.82% for customers who use Electronic Check with paperless billing.
-- Customers who use Electronic Check as their payment method with paperless billing experience a churn rate that is twice as high across different contract types.
-- 42% of customers with a monthly contract have churned, with the highest churn rate at 57.7% for those who use Electronic Check with paperless billing.
+- Customers with a `two-year contract` generally have a churn rate of only 2.83%.
+   - Among them, those who use `Mailed Check as their payment method and opt for manual (non-paperless) billing` have the lowest churn rate at just 0.37%.
+   - Conversely, the highest churn rate within this group is 9.82% for customers who use `Electronic Check with paperless billing`.
+- Customers who use `Electronic Check as their payment method with paperless billing` experience a churn rate that is twice as high across different contract types.
+- About 42% of customers with a `monthly contract` have churned, with the highest churn rate at 57.7% for those who use `Electronic Check with paperless billing`.
       
 
 ## G. Survival Function Estimation
