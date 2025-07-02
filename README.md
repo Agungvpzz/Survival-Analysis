@@ -237,10 +237,25 @@ Example Feature: Contract
 <div align=center>
      
    ![Socio-Demographic Features](https://github.com/user-attachments/assets/bb91b34a-9782-4876-b537-c25a3128318e)
+   ![image](https://github.com/user-attachments/assets/3d5b6e69-c7ae-4a94-a80d-4fe5221ad8a3)
+   ![image](https://github.com/user-attachments/assets/7f8b5324-2f4b-4d19-99f7-937508c6fb17)
+
 </div>
 
-- Among all socio-demographic features, only Gender did not reach statistical significance.
-- The Partner feature shows a significant difference in survival probabilities.
+- Among all socio-demographic features, only `Gender` did not reach statistical significance.  
+- Final survival (%) below 50%:
+  - `Partner | No`: 46.32%
+  - `SeniorCitizen | 1`: 42.13%
+- Significant survival drop by tenure for each categorical value (%):
+  - `Dependents`: 0.66% → 0.34% (`Dependents | No` → `Dependents | Yes`)
+  - `Partner`: 0.74% → 0.42% (`Partner | No` → `Partner | Yes`)
+  - `SeniorCitizen`: 0.79% → 0.50% (`SeniorCitizen | 1` → `SeniorCitizen | 0`)
+- Churn Concentration:
+  - In the first year of tenure, an average of 52.6% of churned customers leave.
+  - By 24.0 tenure points (2 years), more than half (68.78%) of churned customers have left.
+- Notable Insights:
+  - `Partner`: First-month churn difference between `Partner | No` (26.17%) and `Partner | Yes` (9.87%)
+  - All demographic features—except `Gender`, exhibit approximately a 20% difference in final survival rates across their unique values.
 
 
 #### b. Product/Service Features
