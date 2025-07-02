@@ -164,10 +164,10 @@ Example Feature: Contract
 #### a. Socio-Demographic Features
 <div align=center>
 
+   ![Socio-Demographic Features](https://github.com/user-attachments/assets/66706ae4-ef4b-4895-94a6-ff73163cbb39)
    ![Socio-Demographic Features Table](https://github.com/user-attachments/assets/52db90b9-b2bf-4106-b837-7f2d7c1e7741)
 </div>
 
-- Among all socio-demographic features, only Gender did not reach statistical significance.
 - Customers who have a partner, are not senior citizens, and live with dependents have the lowest churn rate, at only 13.75%.
 - Customers who have no partner, are senior citizens, and have no dependents exhibit the highest churn rate, approaching 50%.
 
@@ -175,6 +175,7 @@ Example Feature: Contract
 #### b. Service Features
 <div align=center>
 
+   ![Service Features](https://github.com/user-attachments/assets/eace1bf4-006b-4cd1-9a4e-5d4e0eea7844)
    ![Service Features Table](https://github.com/user-attachments/assets/9ad999c4-811f-4b4c-9302-93d6f195f9fc)
 </div>
 
@@ -186,6 +187,7 @@ Example Feature: Contract
 #### c. Payment Features
 <div align=center>
 
+   ![Payment Features](https://github.com/user-attachments/assets/c3a4fd58-67c3-417c-9f26-f5612dd0aec6)
    ![Payment Features Table](https://github.com/user-attachments/assets/216c63e3-22ef-4190-a12a-dd3a85952c00)
 </div>   
 
@@ -234,6 +236,7 @@ Example Feature: Contract
    ![Socio-Demographic Features](https://github.com/user-attachments/assets/bb91b34a-9782-4876-b537-c25a3128318e)
 </div>
 
+- Among all socio-demographic features, only Gender did not reach statistical significance.
 - The Partner feature shows a significant difference in survival probabilities.
 
 
