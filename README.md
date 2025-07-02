@@ -237,7 +237,7 @@ Example Feature: Contract
 <div align=center>
      
    ![Socio-Demographic Features](https://github.com/user-attachments/assets/bb91b34a-9782-4876-b537-c25a3128318e)   
-   ![Socio-Demographic Features-Times](https://github.com/user-attachments/assets/7f8b5324-2f4b-4d19-99f7-937508c6fb17)
+   ![Socio-Demographic Features-Times](https://github.com/user-attachments/assets/7f8b5324-2f4b-4d19-99f7-937508c6fb17)<br>Observed Churn (%)
 
 </div>
 
@@ -261,7 +261,7 @@ Example Feature: Contract
 <div align=center>
      
    ![Service Features](https://github.com/user-attachments/assets/7ad66081-8b99-429d-b088-af1692fec09e)
-   ![Service Features-Times](https://github.com/user-attachments/assets/9f524cc3-a5c7-4a3c-b74c-ac16d690a836)
+   ![Service Features-Times](https://github.com/user-attachments/assets/9f524cc3-a5c7-4a3c-b74c-ac16d690a836)<br>Observed Churn (%)
 
 </div>
 
@@ -290,7 +290,7 @@ Example Feature: Contract
 <div align=center>
      
    ![Payment Features](https://github.com/user-attachments/assets/e87d71e5-7986-4cb9-a973-9a4ff8f65a67)
-   ![Payment Features-Times](https://github.com/user-attachments/assets/bd19dcd4-313e-483f-a2e0-4a243705dd45)
+   ![Payment Features-Times](https://github.com/user-attachments/assets/bd19dcd4-313e-483f-a2e0-4a243705dd45)<br>Observed Churn (%)
 
 </div>
 
@@ -317,6 +317,7 @@ Example Feature: Contract
 
 ## H. Hazard Modeling
 
+
 ### 1. Model Evaluation
 <div align=center>
 
@@ -333,6 +334,7 @@ The survival model exhibits strong predictive performance with minimal overfitti
     - Test: 0.9711
     - Excellent discriminatory ability in time-dependent survival probability estimation.
 - The close alignment between train and test results highlights good generalization and model robustness for survival prediction.
+
 
 ### 2. Model Comparison
 <div align=center>
@@ -421,6 +423,7 @@ Example Covariate: InternetService
 - By year four, the survival rate for `Fiber optic` falls to 0%, `DSL` declines sharply to 46.5%, while `No InternetService` still maintains a rate above 90%.
 - By year five, only the `No InternetService` category continues to retain a substantial portion of customers, with a survival rate of 68.4%.
 
+
 #### d. Survival Function Curve Based on Hazard Quartiles
 <div align=center>
 
@@ -430,6 +433,7 @@ Example Covariate: InternetService
 - The survival curves clearly demonstrate how well the hazard model separates customers based on quartile-based risk levels.
 - Each curve successfully distinguishes churned from non-churned customers, with the churned group appearing lower and the non-churned group higher, as expected.
 
+
 #### e. Survival Function Curve for Time-to-Event Predictions
 <div align=center>
 
@@ -437,6 +441,8 @@ Example Covariate: InternetService
 </div>
 
 - Using customer samples, as shown in the chart above, the model captures several churn events with good accuracy.
+
+
 
 ## I. Conclusion
 
