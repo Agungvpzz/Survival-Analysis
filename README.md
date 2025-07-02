@@ -187,7 +187,7 @@ Example Feature: Contract
 #### c. Payment Features
 <div align=center>
 
-   ![Payment Features](https://github.com/user-attachments/assets/c3a4fd58-67c3-417c-9f26-f5612dd0aec6)
+   ![Payment Features](https://github.com/user-attachments/assets/d0f12ca5-6f11-4456-8b6c-578e296c48ed)
    ![Payment Features Table](https://github.com/user-attachments/assets/216c63e3-22ef-4190-a12a-dd3a85952c00)
 </div>   
 
