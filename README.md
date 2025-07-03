@@ -245,7 +245,7 @@ Example Feature: Contract
    - By 24.0 tenure points (2 years), more than half (68.78%) of churned customers have left.
 - Notable Insights:
    - `Partner`: First-month churn difference between `Partner | No` (26.17%) and `Partner | Yes` (9.87%)
-   - All demographic features—except `Gender`, exhibit approximately a 20% difference in final survival rates across their unique values.
+   - All demographic features, except `Gender`, exhibit approximately a 20% difference in final survival rates across their unique values.
 
 
 #### b. Product/Service Features
@@ -352,7 +352,9 @@ The survival model exhibits strong predictive performance with minimal overfitti
 - Cumulative Dynamic AUC:
     - Train: 0.9730 -> 0.9788
     - Test: 0.9711 -> 0.9773
-- Summary:
+
+
+### 4. Model Summary:
 <div align=center>
    
    ![image](https://github.com/user-attachments/assets/b1b6d964-eb96-4da0-a0ef-fcccea45f671)
@@ -504,37 +506,24 @@ Example Covariate: InternetService
    - Lastly, quartile-based survival functions cleanly stratify risk groups, confirming that the model effectively separates high-risk and low-risk customers.
 
 
+
 ## J. Recommendations
-1. Prioritize Long-Term Contracts to Mitigate Churn
-   - Issue: Customers on month-to-month contracts show the highest churn rates, with churn risk increasing by over 23× compared to two-year contracts.
-   - Recommendation:
-      - Promote annual or multi-year plans through attractive discounts or loyalty rewards.
-      - Offer incentives such as free add-on services, bill credits, or device upgrades to encourage customers to commit to longer-term contracts.
-      - Implement early renewal campaigns targeting high-risk customers nearing the end of their short-term contracts.
-2. Tailor Interventions for High-Risk Internet Service Users
-   - Issue: Customers with fiber optic service are at significantly higher risk of churn (hazard increase of over 55×).
-   - Recommendation:
-      - Improve service reliability and speed transparency to manage expectations and reduce dissatisfaction.
-      - Offer personalized retention bundles combining internet with essential support features (e.g., Tech Support, Online Security).
-      - Use predictive analytics to flag fiber users for proactive engagement based on churn risk scores.
-3. Segment and Support Vulnerable Demographic Groups
-   - Issue: Senior citizens, customers without partners, and those without dependents exhibit significantly higher churn and lower survival rates.
-   - Recommendation:
-      - Develop customer education materials tailored for senior users to ease onboarding.
-      - Offer personalized communications and exclusive support services to address concerns from individuals who may feel underserved.
-      - Implement compassion-based retention programs, such as wellness calls or loyalty perks, for customers in higher-risk demographic brackets.
-4. Reform Payment and Billing Practices
-   - Issue: Customers using Electronic check or Paperless billing churn at significantly higher rates (up to 45.3%).
-   - Recommendation:
-      - Encourage customers to switch to automated credit card or bank draft payments with financial incentives.
-      - Conduct billing experience surveys to identify dissatisfaction points in the paperless process and improve usability.
-      - Offer a “safe trial” billing method switch option with no penalties for reverting, encouraging customers to explore alternatives.
-5. Strengthen Early-Tenure Engagement Strategies
-   - Issue: Over 55% of churn happens within the first year, especially in the first month.
-   - Recommendation:
-      - Launch an intensive onboarding program during the first 30 days, including welcome calls, setup assistance, and proactive check-ins.
-      - Use early usage behavior to trigger automated support nudges, tips, or offers based on churn probability.
-      - Provide a “First-Year Loyalty Program” that rewards continued service through monthly milestones
+1. Shift Away from Month-to-Month Contracts
+   - Issue: Customers on month-to-month contracts are 5 to 23 times more likely to churn compared to those on long-term plans.
+   - Recommendation: Promote annual or two-year plans through discounts, loyalty rewards, or early-lock-in benefits to improve customer retention.
+2. Target High-Risk Internet Service Segments
+   - Issue: Customers using Fiber Optic services show drastically higher churn risk (up to 55 times) than those without internet service.
+   - Recommendation: Identify dissatisfaction drivers (e.g., pricing, performance expectations) among fiber users. Consider bundling support services, better onboarding, or satisfaction guarantees to mitigate churn.
+3. Strengthen Support Service Adoption
+   - Issue: Users without OnlineSecurity, TechSupport, or OnlineBackup are twice as likely to churn.
+   - Recommendation: Create campaigns that emphasize the value of bundled services, or offer free trials for new users to increase feature adoption.
+4. Segment & Support Vulnerable Demographics
+   - Issue: Churn is notably higher among senior citizens, those without partners, and customers without dependents.
+   - Recommendation: Tailor customer engagement with personalized communication and support plans, potentially through age-sensitive or household-sensitive retention offers.
+5. Incentivize Payment Method Improvements
+   - Issue: Customers using Electronic Check face the highest churn (≈45%).
+   - Recommendation: Encourage automatic payments (credit card, bank transfer) with incentives or discounts, while simplifying transitions away from risky payment methods.
+
 
 
 ## K. Next Steps
@@ -548,7 +537,7 @@ Example Covariate: InternetService
    - Develop Explainable Reporting Interfaces: Generate human-readable summaries of why a specific customer is flagged as high-risk, making the model outputs interpretable for both technical and non-technical teams.
 
 3. Deploy Real-Time Churn Monitoring and Intervention Tools
-   - Build Interactive Survival Dashboards: Visualize real-time survival curves, churn probabilities, and hazard scores—segmented by tenure, contract type, internet service, and other key attributes.
+   - Build Interactive Survival Dashboards: Visualize real-time survival curves, churn probabilities, and hazard scores, with segmentation by tenure, contract type, internet service, and other key attributes.
    - Enable Smart Alerts for Proactive Retention: Implement automated alert systems to flag high-risk customers early in their tenure, enabling timely and personalized retention actions.
    - Integrate Risk Scoring into CRM Workflows: Push hazard scores and churn flags directly into CRM systems or customer service dashboards to assist agents in prioritizing outreach and tailoring retention offers.
    - Track Intervention Outcomes: Monitor the effectiveness of retention strategies deployed for high-risk segments, and loop this feedback into model retraining cycles.
