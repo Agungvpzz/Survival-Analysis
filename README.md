@@ -43,7 +43,7 @@ The primary goal of this analysis is to understand customer behavior over time a
 2. Visualizing churn composition across categorical features using a stacked bar chart.
 3. Visualizing churn distribution across tenure using a stacked bar chart.
 4. Visualizing churn distribution across tenure under different conditions using multiple stacked bar charts.
-5. Assessing the association between categorical features and churn using χ² tests.
+5. Assessing the association between categorical features and churn using chi-squared (χ²) tests.
 6. Visualizing the Pearson correlation coefficient between churn and each feature using a bar chart.
 7. Visualizing unique combinations of significant categorical features using a parallel categories chart.
 
@@ -100,15 +100,15 @@ The primary goal of this analysis is to understand customer behavior over time a
 - Sorted by chi-square (χ²) values, the bar chart highlights how churn composition varies across each categorical feature.
 - Based on the graph above, we spotlight several insights by feature grouping below.
 - **Socio-Demographic Features**:
-   - `Senior Citizen`: Senior customers (age ≥ 65) have a 41.68% churn rate, almost twice as high as non-seniors (23.61%).
-   - `Dependents`: Customers without dependents have a 31.28% churn rate, nearly twice as high as those with dependents (15.45%).
-   - `Partner`: Customers with partners have a 32.96% churn rate, notably higher than those who are single (19.66%).
+   - `Senior Citizen`: `Senior` customers (age ≥ 65) have a 41.68% churn rate, almost twice as high as `non-seniors` (23.61%).
+   - `Dependents`: Customers `without dependents` have a 31.28% churn rate, nearly twice as high as those `with dependents` (15.45%).
+   - `Partner`: Customers `with partners` have a 32.96% churn rate, notably higher than those who are `single` (19.66%).
 - **Payment Features**:
-   - `Contract`: Customers on monthly contracts have a 42.7% churn rate, significantly higher than other types, and represent the largest customer group (55%).
-   - `Payment Method`: Those using electronic check as a payment method show a 45.29% churn rate, nearly three times higher than other methods.
-   - `PaperlessBilling`: Customers enrolled in paperless billing have a 33.57% churn rate, more than double that of those who are not (16.33%).
+   - `Contract`: Customers on `monthly contracts` have a 42.7% churn rate, significantly higher than other types, and represent the largest customer group (55%).
+   - `Payment Method`: Those using `electronic check` as a payment method show a 45.29% churn rate, nearly three times higher than other methods.
+   - `PaperlessBilling`: Customers enrolled in `paperless billing` have a 33.57% churn rate, more than double that of those who are not (16.33%).
 - **Service Features**:
-   - `InternetService`: Customers with internet service (either fiber optic or DSL) show significantly higher churn compared to those without. Specifically, fiber optic users have a 41.89% churn rate, more than twice that of DSL users (18.96%), and nearly six times that of customers without internet service.
+   - `InternetService`: Customers with internet service (either `fiber optic` or `DSL`) show significantly higher churn compared to those without. Specifically, `fiber optic` users have a 41.89% churn rate, more than twice that of `DSL` users (18.96%), and nearly six times that of customers `without internet service`.
       - This distinction between internet users and non-users also impacts related features: `OnlineSecurity`, `OnlineBackup`, `DeviceProtection`, `TechSupport`, `StreamingTV`, and `StreamingMovies`.
    - `OnlineSecurity`: Customers without this service experience a 41.77% churn rate, nearly three times higher than subscribers.
    - `TechSupport`: Those lacking tech support show a 41.64% churn rate, almost triple that of users with support.
@@ -121,9 +121,9 @@ The primary goal of this analysis is to understand customer behavior over time a
    ![Churn Distribution Across Tenure Periods](https://github.com/user-attachments/assets/3b2767f2-638d-400b-8286-259eca0bca47)
 </div>
 
-- The bar chart reveals a sharp spike in churn (around 380 customers) early in the customer lifecycle. This suggests that many users leave shortly after joining, possibly due to onboarding issues, unmet expectations, or a mismatch between the product and customer needs.
-- After this initial drop-off, churn steadily declines and then levels out. This trend may indicate that customers who stick around past the first few months are more likely to stay loyal, or that early churners differ meaningfully from long-term users.
-- Toward the end of the tenure periods, the chart shows an increase in the number of customers who have stayed for over five years. This hints that the earliest customers, especially those from the first three months, tend to be the most loyal.
+- The bar chart reveals a sharp spike in churn (around 380 customers) early in the first month. This suggests that many users leave shortly after joining, possibly due to onboarding issues, unmet expectations, or a mismatch between the product and customer needs.
+- After this initial drop-off, churn steadily declines and then levels out, indicating that customers who remain beyond the first few months are more likely to stay loyal.
+- Toward the later tenure periods, the chart shows an uptick in the number of customers who have stayed for over five years. This suggests that the earliest users, especially those from the first three months who have been engaged for approximately 70 tenure periods, tend to be the most loyal.
 
 
 ### 4. Churn Distribution Across Tenure Periods under Different Conditions
@@ -139,7 +139,7 @@ Example Feature: Contract
 - The `Two-year` contract displays a higher proportion of long-term customers, many of whom have remained active for over five years. This suggests strong loyalty among existing subscribers. However, the lower presence of newer users on this contract type may indicate a shift in preference toward more flexible, short-term plans, potentially challenging future retention.
 
 
-### 5. Association Between Categorical Features and Churn using χ² tests
+### 5. Association Between Categorical Features and Churn using chi-squared (χ²) tests
 <div align=center>
    
    ![chi2 tests](https://github.com/user-attachments/assets/446d77a1-a64b-47dc-bf7a-3cd0f5a1db34)
