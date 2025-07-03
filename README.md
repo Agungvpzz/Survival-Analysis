@@ -40,12 +40,11 @@ The primary goal of this analysis is to understand customer behavior over time a
 
 ### a. Exploratory Data Analysis (EDA)
 1. Visualizing churn composition using a pie chart.
-2. Visualizing churn composition across categorical features using a stacked bar chart.
+2. Visualizing churn composition and association (with chi-squared tests) across categorical features using a bar chart grouped by variable and stacked by churn status.
 3. Visualizing churn distribution across tenure using a stacked bar chart.
 4. Visualizing churn distribution across tenure under different conditions using multiple stacked bar charts.
-5. Assessing the association between categorical features and churn using chi-squared (χ²) tests.
-6. Visualizing the Pearson correlation coefficient between churn and each feature using a bar chart.
-7. Visualizing unique combinations of significant categorical features using a parallel categories chart.
+5. Visualizing the Pearson correlation coefficient between churn and each feature using a bar chart.
+6. Visualizing unique combinations of significant categorical features using a parallel categories chart.
 
 
 ### b. Survival Function Estimation using the Kaplan-Meier Method (Non-Parametric)
@@ -94,10 +93,11 @@ The primary goal of this analysis is to understand customer behavior over time a
 ### 2. Churn Composition Across Categorical Features
 <div align=center>
 
-   ![Churn Composition Across Categorical Features](https://github.com/user-attachments/assets/19181235-6b43-4277-8b6b-861358014d46)
+   ![Churn Composition Across Categorical Features](https://github.com/user-attachments/assets/19181235-6b43-4277-8b6b-861358014d46)   
 </div>
 
 - Sorted by chi-square (χ²) values, the bar chart highlights how churn composition varies across each categorical feature.
+- Almost all features, as shown in the chart, demonstrate significant differences in churn composition based on their `chi²` values, except for `Gender` and `PhoneService`, which show weak or negligible associations.
 - Based on the graph above, we spotlight several insights by feature grouping below.
 - **Socio-Demographic Features**:
    - `Senior Citizen`: `Senior` customers (age ≥ 65) have a 41.68% churn rate, almost twice as high as `non-seniors` (23.61%).
@@ -139,16 +139,7 @@ Example Feature: Contract
 - The `Two-year` contract displays a higher proportion of long-term customers, many of whom have remained active for over five years. This suggests strong loyalty among existing subscribers. However, the lower presence of newer users on this contract type may indicate a shift in preference toward more flexible, short-term plans, potentially challenging future retention.
 
 
-### 5. Association Between Categorical Features and Churn using chi-squared (χ²) tests
-<div align=center>
-   
-   ![chi2 tests](https://github.com/user-attachments/assets/446d77a1-a64b-47dc-bf7a-3cd0f5a1db34)
-</div>
-
-- Almost all features, as shown in the chart, demonstrate significant differences in churn composition based on their `chi²` values, except for `Gender` and `PhoneService`, which show weak or negligible associations.
-
-
-### 6. Pearson Correlation Coefficient Between Churn and each Feature
+### 5. Pearson Correlation Coefficient Between Churn and each Feature
 <div align=center>
 
    ![Pearson Correlation Coefficient Between Churn and each Feature](https://github.com/user-attachments/assets/3af87eac-2b47-4bd3-9691-9940a200fb7e)
@@ -159,7 +150,7 @@ Example Feature: Contract
 - Together, `MonthlyCharges`, `TotalCharges`, and `Contract` capture overlapping aspects of tenure and pricing. While not a direct case of data leakage, their interdependence warrants caution, especially with multicollinearity in modeling.
 
 
-### 7. Combination of Significant Categorical Features
+### 6. Combination of Significant Categorical Features
 
 #### a. Socio-Demographic Features
 <div align=center>
