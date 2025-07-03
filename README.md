@@ -17,15 +17,15 @@ The primary goal of this analysis is to understand customer behavior over time a
 
 
 ### 2. Objective of this analysis
-1. Estimate survival probabilities to understand customer retention trends.
-2. Identify key factors influencing customer churn using Cox Proportional Hazards modeling.
-3. Provide actionable insights for customer segmentation and retention strategies.
+1. Estimate customer retention over time using survival analysis.
+2. Identify key drivers of churn using hazard modeling.
+3. Provide insights to support data-informed retention strategies.
 
 
 ### 3. Key Questions to Answer
-1. What is the estimated survival probability of customers over different time periods?
-2. Which factors have the strongest impact on customer churn risk?
-3. How can businesses optimize retention strategies based on survival analysis findings?
+1. How long do customers typically stay, and when are they most likely to churn?
+2. What factors most strongly influence churn risk?
+3. How can we use these insights to improve customer retention?
 
 
 
@@ -49,34 +49,41 @@ The primary goal of this analysis is to understand customer behavior over time a
 
 ### b. Survival Function Estimation using the Kaplan-Meier Method (Non-Parametric)
 1. Visualizing the survival function curve and its confidence interval using a line chart.
-2. Visualizing survival curves across the unique values of each categorical feature.
+2. Stratify survival curves by categorical variables to compare retention patterns.
 
 
 ### c. Hazard Modeling with the Cox Proportional Hazards Model (Semi-Parametric)
-1. **Data Pre-processing**
+1. **Data Preparation**
    - Drop features whose χ² p-values indicate no significant association with churn.
-   - Apply ranked target mean encoding for all categorical features.
+   - Encode categorical variables using rank-based target mean encoding.
    - Split the data with `Surv.from_dataframe`, reserving 30 % for testing and stratifying on churn to keep class balance.
 2. **Feature Engineering**
-   - Transform continuous variables into quantile-based bins.
-3. **Model Fitting**
+   - Apply quantile binning to continuous variables (e.g., TotalCharges).
+3. **Model Training**
    - Fit a Cox Proportional Hazards model using default hyper-parameters.
 4. **Model Evaluation**
-   - Examine the `CoxPHFitter` summary, coefficients, hazard ratios (exp(coef)), z-scores, p-values, and −log₂(p), to judge covariate reliability.
-   - Compute the standard concordance index to quantify the model’s ranking ability.
-   - Compute the censored concordance index to incorporate censored observations.
-   - Calculate the cumulative dynamic AUC to assess time-dependent predictive performance.
+   - Assess summary stats: coefficients, hazard ratios, p-values.
+   - Compute:
+      - Standard Concordance Index (C-Index)
+      - Censored C-Index
+      - Cumulative Dynamic AUC over tenure
 5. **Model Comparison**
    - Contrast results from the *lifelines* and *scikit-survival* implementations.  
    - Benchmark predictive performance across alternative feature sets.
 6. **Model Selection**
-7. **Model Visualisation**  
-   - Plot coefficients with their 95 % confidence intervals (bar chart).
+   - Select the best-performing configuration.
+7. **Model Summary**
+8. **Model Visualisation**  
+   - Plot coefficient bars with 95% CIs.
    - Plot covariate partial effects to show how within-group changes shift the survival curve (line chart).
    - Draw time-dependent ROC curves to illustrate accuracy over time.
    - Plot survival curves stratified by hazard-risk quartiles to display risk separation.
    - Overlay predicted vs. observed time-to-event curves to assess calibration.
 
+
+### d. Tools and Libraries
+   - Tools: Python, JupyterLab, Git, GitHub
+   - Python Libraries: lifelines, scikit-survival, scikit-learn, plotly, pandas, numpy, streamlit, scipy
 
 
 ## F. Exploratory Data Analysis
@@ -354,7 +361,7 @@ The survival model exhibits strong predictive performance with minimal overfitti
     - Test: 0.9711 -> 0.9773
 
 
-### 5. Model Summary
+### 4. Model Summary
 
 
 <div align=center>
