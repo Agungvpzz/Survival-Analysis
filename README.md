@@ -108,11 +108,11 @@ The primary goal of this analysis is to understand customer behavior over time a
       - `Payment Method`: Those using `electronic check` as a payment method show a 45.29% churn rate, nearly three times higher than other methods.
       - `PaperlessBilling`: Customers enrolled in `paperless billing` have a 33.57% churn rate, more than double that of those who are not (16.33%).
    - **Service Features**:
-      - `InternetService`: Customers with internet service (either `fiber optic` or `DSL`) show significantly higher churn compared to those without. Specifically, `fiber optic` users have a 41.89% churn rate, more than twice that of `DSL` users (18.96%), and nearly six times that of customers `without internet service`.
-         - This distinction between internet users and non-users also impacts related features: `OnlineSecurity`, `OnlineBackup`, `DeviceProtection`, `TechSupport`, `StreamingTV`, and `StreamingMovies`.
+      - `InternetService`: Customers with internet service (either `fiber optic` or `DSL`) show significantly higher churn compared to those without. Specifically, `fiber optic` customers have a 41.89% churn rate, more than twice that of `DSL` customers (18.96%), and nearly six times that of customers `without internet service`.
+         - This distinction between internet customers and non-customers also impacts related features: `OnlineSecurity`, `OnlineBackup`, `DeviceProtection`, `TechSupport`, `StreamingTV`, and `StreamingMovies`.
       - `OnlineSecurity`: Customers without this service experience a 41.77% churn rate, nearly three times higher than subscribers.
-      - `TechSupport`: Those lacking tech support show a 41.64% churn rate, almost triple that of users with support.
-      - `OnlineBackup`: Customers not using online backup have a 39.93% churn rate, nearly twice as high as users who do.
+      - `TechSupport`: Those lacking tech support show a 41.64% churn rate, almost triple that of customers with support.
+      - `OnlineBackup`: Customers not using online backup have a 39.93% churn rate, nearly twice as high as customers who do.
 
   
 ### 3. Churn Distribution Across Tenure Periods
@@ -121,7 +121,7 @@ The primary goal of this analysis is to understand customer behavior over time a
    ![Churn Distribution Across Tenure Periods](https://github.com/user-attachments/assets/3b2767f2-638d-400b-8286-259eca0bca47)
 </div>
 
-- The bar chart reveals a sharp spike in churn (around 380 customers) early in the first month. This suggests that many users leave shortly after joining, possibly due to onboarding issues, unmet expectations, or a mismatch between the product and customer needs.
+- The bar chart reveals a sharp spike in churn (around 380 customers) early in the first month. This suggests that many customers leave shortly after joining, possibly due to onboarding issues, unmet expectations, or a mismatch between the product and customer needs.
 - After the initial drop-off, churn steadily decreases through the end of year 1, then remains stable up to year 5, indicating that customers who remain beyond the first few months are more likely to stay loyal.
 - After year 5, the chart shows a gradual increase in the number of customers who have stayed for more than five years, with a big jump in the last three time periods, especially the final one. This suggests that the earliest customers, especially those from the first three months who have been engaged for approximately 70 tenure periods, tend to be the most loyal.
 
@@ -204,19 +204,19 @@ Example Feature: Contract
 - **Early Churn (First Month)**:
   - The steepest drop in the survival curve, about 5%, occurs within the first month of customer engagement.
   - Approximately 20% of all churned customers leave during this initial period.
-  - This suggests that a substantial segment of users are evaluating the service and decide to discontinue early, likely due to unmet expectations or poor initial experience.
+  - This suggests that a substantial segment of customers are evaluating the service and decide to discontinue early, likely due to unmet expectations or poor initial experience.
 
 - **High-Risk Period (Month 1 to Month 12)**:
    - From month 1 through month 12, the survival probability declines further from ~95% to ~84%, a drop of over 10 percentage points.
-   - During this period, about 1,000 customers, roughly 55% of all churned users, choose to exit the service.
-   - This one-year window is a critical phase for customer retention efforts, as many users exit before forming long-term habits or commitments.
+   - During this period, about 657 customers, roughly 35% of all churned customers, choose to exit the service.
+   - This one-year window is a critical phase for customer retention efforts, as 55% of churned customers leave before forming long-term habits or commitments.
 
 - **Gradual Decline (After Month 12)**:
    - After the first year, the survival curve continues a slow but steady descent.
    - Annual churn becomes more gradual, with ~5% decrease in survival probability per year.
-   - In total, the distribution of churned users across each year is approximately:
-      - Year 2: 16% of all churned users occurred (corresponding to a ~5 percentage point drop in survival curve)
-      - Year 3: 9% of churned users (~4% drop in survival)
+   - In total, the distribution of churned customers across each year is approximately:
+      - Year 2: 16% of all churned customers occurred (corresponding to a ~5 percentage point drop in survival curve)
+      - Year 3: 9% of churned customers (~4% drop in survival)
       - Year 4: 8% (~4% drop)
       - Year 5: 7% (~5% drop)
       - Year 6: 5% (~7% drop)
@@ -442,10 +442,10 @@ Example Covariate: InternetService
 - **Statistical Associations**: All categorical features, except for Gender and PhoneService, show a statistically significant association with Churn.
 - **Tenure and Contract Type Insights**:
    - The `Month-to-month contract` type exhibits the highest churn rate, particularly during the first month. Given that this plan is used by the majority of our customers, it underscores the company's vulnerability if it relies solely on short-term contracts without effective customer retention strategies.
-   - The `Two-year contract` is associated with a higher proportion of customers remaining active for over five years. However, the lower number of newer users on this contract might indicate either a shift in customer preference or the impact of targeted marketing strategies that encourage a move toward short-term contracts.
+   - The `Two-year contract` is associated with a higher proportion of customers remaining active for over five years. However, the lower number of newer customers on this contract might indicate either a shift in customer preference or the impact of targeted marketing strategies that encourage a move toward short-term contracts.
 
 - **Service Features Insights**:
-   - Customers `without internet service` demonstrate higher loyalty, with a churn rate of only 7.4%. In contrast, `Fiber Optic` and `DSL` users exhibit churn rates of 41.9% and 19.0%, respectively.
+   - Customers `without internet service` demonstrate higher loyalty, with a churn rate of only 7.4%. In contrast, `Fiber Optic` and `DSL` customers exhibit churn rates of 41.9% and 19.0%, respectively.
    - Among customers `with internet service`, those who do not subscribe to any additional services, such as `OnlineSecurity`, `TechSupport`, `OnlineBackup`, or `DeviceProtection`, experience a significantly higher churn rate of approximately 40%, twice as high as those who subscribe to at least one of these services.
  
 - **Socio-Demographc Features Insights**:
@@ -465,7 +465,7 @@ Example Covariate: InternetService
    - a sharp early churn in the first month,
    - a high-risk churn window within the first year, and
    - a gradual decline in customer retention thereafter.
-   - Notably, around 75% of churn occurs within the first two years, emphasizing the importance of early engagement strategies.
+   - Notably, around 55% of churn occurs within the first year, highlighting the importance of early engagement strategies.
 - Across socio-demographic features:
    - Attributes like `having a partner`, not `a senior citizen`, or `having dependents` show higher survival rates, with `Gender` being the only statistically insignificant factor.
    - Customers `without partners or dependents, and senior citizens`, exhibit lower survival rates, suggesting these groups may need more targeted retention strategies.
