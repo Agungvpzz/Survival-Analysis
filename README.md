@@ -190,7 +190,7 @@ Example Feature: Contract
 - About 42% of customers with a `monthly contract` have churned, with the highest churn rate at 57.7% for those who use `Electronic Check with paperless billing`.
       
 
-## G. Survival Function Estimation
+## G. Survival Function Estimation using the Kaplan-Meier Method
 
 ### 1. Survival Function Curve
 <div align=center>
@@ -306,7 +306,7 @@ Example Feature: Contract
   - `Contract | Two year` shows the highest final survival rate at 93.57%, meanwhile the `Contract | Month-to-month` has the lowest at 12.9%.
 
 
-## H. Hazard Modeling
+## H. Hazard Modeling Using Cox Proportional Hazards
 
 
 ### 1. Model Evaluation
@@ -368,12 +368,12 @@ The survival model exhibits strong predictive performance with minimal overfitti
       - Each extra dollar in TotalCharges cuts the churn hazard by ≈ 0.1%.
    - `Contract` (0=Two-year → 1=One-year → 2=Month-to-month):
       - coef = 1.578, HR = exp(1.578) = 4.846
-      - A one-rank step (e.g. Two-year → One-year) multiplies churn risk by ~4.85×.
-      - Moving from Two-year (0) to Month-to-month (2) (Δ=2 ranks) multiplies hazard by exp(1.578 × 2) ≈ 23.5×.
+      - A one-rank step (e.g. Two-year → One-year) multiplies churn risk by ~4.85 times.
+      - Moving from Two-year (0) to Month-to-month (2) (Δ=2 ranks) multiplies hazard by exp(1.578  times 2) ≈ 23.5 times.
    - `InternetService` (0=No → 1=DSL → 2=Fiber):
       - coef = 2.006, HR = exp(2.006) = 7.430
-      - A one-rank step (No → DSL) multiplies hazard by ~7.43×.
-      - Going from No Internet (0) to Fiber (2) multiplies hazard by exp(2.006 × 2) ≈ 55×.
+      - A one-rank step (No → DSL) multiplies hazard by ~7.43 times.
+      - Going from No Internet (0) to Fiber (2) multiplies hazard by exp(2.006  times 2) ≈ 55 times.
 
 
 ### 4. Model Visualization
@@ -458,7 +458,7 @@ Example Covariate: InternetService
    - Customers enrolled in paperless billing have a churn rate of 33.57%, roughly double that of customers who are not (16.33%).
 
 
-### 2. Survival Analysis
+### 2. Survival Function Estimation
 - **Final Survival (%)**: 59.28% at the final tenure period.
 - **Average Survival Drop per Tenure (%)**: -0.56% per tenure.
 - The overall survival curve highlights three distinct retention phases:
@@ -478,10 +478,25 @@ Example Covariate: InternetService
    - In contrast, long-term contract customers, particularly those on `Contract | Two year`, maintain the highest survival rates.
    - These patterns reinforce the protective effect of long-term agreements and automated payment methods on customer retention.
 
-### 3. Hazard Predictive Modeling
-- Our model have a good generalization with strong and consistent performance over most of the time range, with only slight degradation in later time periods.
-- Four variables, `Contract`, `InternetService`, `TotalCharges`, and `TotalCharges (Q)`, make a robust and en efective combination for Hazard modeling.
-- 
+### 3. Hazard Modeling
+- The hazard modeling analysis using the Cox Proportional Hazards model reveals a robust and well-calibrated predictive framework for understanding customer churn risk over time.
+- Best Predictors: `Contract`, `InternetService`, `TotalCharges`, and `TotalCharges (Q)`
+- Model Scores:   
+   - Concordance Index (C-Index) & C-IndexC (Censored):
+      - Train: 0.9565
+      - Test: 0.9526
+   - Cumulative Dynamic AUC:
+      - Train: 0.9788
+      - Test: 0.9773 
+   - Notably, both the Concordance Index and cumulative dynamic AUC reached values above 0.95, demonstrating high discriminatory power and strong predictive accuracy throughout the customer tenure period.
+- The feature importance analysis indicates that `contract type` and `internet service type` are the dominant categorical predictors, exerting large, discrete impacts on churn risk.
+   - For instance, transitioning from `a two-year` to `a month-to-month contract` can increase churn risk by over 23 times, while moving from `no internet` to `fiber optic` service may increase the hazard by over 55 times, emphasizing the behavioral sensitivity associated with short-term contracts and high-speed services.
+   - On the continuous side, TotalCharges (both raw and quantile-transformed) shows significant yet smoother effects on churn probability. Specifically, `a one-quantile` increase in `TotalCharges` reduces the hazard by over 83%, while every additional dollar spent reduces churn risk by approximately 0.1%, reinforcing the protective nature of higher spending or longer tenure.
+   - These findings can directly inform targeted retention strategies, such as offering incentives for long-term contracts or interventions for high-risk internet service users.
+- Visual diagnostics further support the model’s validity.
+   - The time-dependent ROC curves show consistently high AUC values (~0.95–0.99) up to mid-tenure, with minimal degradation over time and excellent generalization across training and test sets.
+   - The partial effects plots clearly illustrate that customers using `fiber optic` services experience far more rapid churn compared to `DSL` or those `without internet service`.
+   - Lastly, quartile-based survival functions cleanly stratify risk groups, confirming that the model effectively separates high- and low-risk customers.
 
 
 ## 9. Recommendation
