@@ -459,21 +459,24 @@ Example Covariate: InternetService
 
 
 ### 2. Survival Analysis
-- **Final Survival (%)**: Our survival curve retain in 59.28% at the final tenure period
-- **Average Survival Drop per Tenure (%)**: Drop 0.56% per tenure.
-- **Three Survival Curve Patterns**:
-   - `Early Churn (First Month)`:
-      - The survival curve drop 5% in the first month.
-      - 20% of all churned customers leave during this initial period and all of them are from `Month-to-month Contract`.
-      - Suggests many users treat the service as a trial.      
-   - `High-Risk Period (Month 1 to Month 12)`:
-      - The survival probability declines further from ~95% to ~84%, a drop of over 10 percentage points.
-      - During this period, about 1,000 customers, roughly 55% of all churned users, choose to exit the service.
-      - This one-year window is a critical phase for customer retention efforts, as many users exit before forming long-term habits or commitments.
-      - These insights emphasize the need for early engagement strategies to reduce initial churn while sustaining long-term customer relationships.
-   - `Gradual Decline (After Month 12)`:
-      - After the first year, the survival curve continues a slow but steady descent, -0.4% drop per tenure and ~5% drop per year.     
-
+- **Final Survival (%)**: 59.28% at the final tenure period.
+- **Average Survival Drop per Tenure (%)**: -0.56% per tenure.
+- The overall survival curve highlights three distinct retention phases:
+   - a sharp early churn in the first month,
+   - a high-risk churn window within the first year, and
+   - a gradual decline in customer retention thereafter.
+   - Notably, around 75% of churn occurs within the first two years, emphasizing the importance of early engagement strategies.
+- Across socio-demographic features:
+   - Attributes like `having a partner`, not `a senior citizen`, or `having dependents` show higher survival rates, with `Gender` being the only statistically insignificant factor.
+   - Customers `without partners or dependents, and senior citizens`, exhibit lower survival rates, suggesting these groups may need more targeted retention strategies.
+- For product and service features:
+   - The absence of support services such as `OnlineSecurity`, `OnlineBackup`, and `TechSupport` is strongly associated with lower survival rates.
+   - Notably, customers using `InternetService | No` show early dropout but maintain a high final survival rate, highlighting potentially different usage intentions or expectations.
+   - These findings suggest that bundling essential services or improving onboarding for feature adoption could positively impact retention.
+- Payment-related features reveal the strongest churn predictors:
+   - Customers on `month-to-month contracts` or those using `Electronic check` or `Mailed check` as payment methods show significantly lower survival rates.
+   - In contrast, long-term contract customers, particularly those on `Contract | Two year`, maintain the highest survival rates.
+   - These patterns reinforce the protective effect of long-term agreements and automated payment methods on customer retention.
 
 ### 3. Hazard Predictive Modeling
 - Our model have a good generalization with strong and consistent performance over most of the time range, with only slight degradation in later time periods.
