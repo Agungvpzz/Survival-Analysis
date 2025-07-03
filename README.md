@@ -207,17 +207,14 @@ Example Feature: Contract
 </div>
 
 - The survival curve reveals Three key patterns in customer retention
-
 - **Early Churn (First Month)**:
   - The steepest drop in the survival curve, about 5%, occurs within the first month of customer engagement.
   - Approximately 20% of all churned customers leave during this initial period.
   - This suggests that a substantial segment of customers are evaluating the service and decide to discontinue early, likely due to unmet expectations or poor initial experience.
-
 - **High-Risk Period (Month 1 to Month 12)**:
    - From month 1 through month 12, the survival probability declines further from ~95% to ~84%, a drop of over 10 percentage points.
    - During this period, about 657 customers, roughly 35% of all churned customers, choose to exit the service.
    - This one-year window is a critical phase for customer retention efforts, as 55% of churned customers leave before forming long-term habits or commitments.
-
 - **Gradual Decline (After Month 12)**:
    - After the first year, the survival curve continues a slow but steady descent.
    - Annual churn becomes more gradual, with ~5% decrease in survival probability per year.
@@ -228,8 +225,10 @@ Example Feature: Contract
       - Year 5: 7% (~5% drop)
       - Year 6: 5% (~7% drop)
    - This pattern reflects ongoing but less concentrated attrition, likely driven by long-term changes in customer needs, emerging alternatives, or a gradual decline in perceived value.
+ 
 
 ### 2. Survival Curves Across the Unique Values of each Categorical Feature
+
 
 #### a. Socio-Demographic Features
 <div align=center>
