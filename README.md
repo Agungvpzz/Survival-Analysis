@@ -440,6 +440,7 @@ Example Covariate: InternetService
 ### 1. Exploratory Data Analysis
 - **Churn Rate**: Approximately 26.5% (1869) of our customers have churned.
 - **Statistical Associations**: All categorical features, except for Gender and PhoneService, show a statistically significant association with Churn.
+
 - **Tenure and Contract Type Insights**:
    - The `Month-to-month contract` type exhibits the highest churn rate, particularly during the first month. Given that this plan is used by the majority of our customers, it underscores the company's vulnerability if it relies solely on short-term contracts without effective customer retention strategies.
    - The `Two-year contract` is associated with a higher proportion of customers remaining active for over five years. However, the lower number of newer customers on this contract might indicate either a shift in customer preference or the impact of targeted marketing strategies that encourage a move toward short-term contracts.
@@ -447,7 +448,7 @@ Example Covariate: InternetService
 - **Service Features Insights**:
    - Customers `without internet service` demonstrate higher loyalty, with a churn rate of only 7.4%. In contrast, `Fiber Optic` and `DSL` customers exhibit churn rates of 41.9% and 19.0%, respectively.
    - Among customers `with internet service`, those who do not subscribe to any additional services, such as `OnlineSecurity`, `TechSupport`, `OnlineBackup`, or `DeviceProtection`, experience a significantly higher churn rate of approximately 40%, twice as high as those who subscribe to at least one of these services.
- 
+
 - **Socio-Demographc Features Insights**:
    - Customers without dependents `(Dependents = No)` have a churn rate of 31.3%, which is twice as high as those with dependents (15.5%).
    - Customers classified as Senior Citizens `(SeniorCitizen = 1, i.e., aged 65 or older)` have a churn rate of 41.7%, nearly double that of non-senior customers (23.6%).
@@ -461,39 +462,55 @@ Example Covariate: InternetService
 ### 2. Survival Function Estimation
 - **Final Survival (%)**: 59.28% at the final tenure period.
 - **Average Survival Drop per Tenure (%)**: -0.56% per tenure.
-- The overall survival curve highlights three distinct retention phases:
+
+- **Survival Curve Highlights Three Distinct Retention Phases**:
    - a sharp early churn in the first month,
    - a high-risk churn window within the first year, and
    - a gradual decline in customer retention thereafter.
    - Notably, around 55% of churn occurs within the first year, highlighting the importance of early engagement strategies.
-- Across socio-demographic features:
+
+- **Survival Function Across socio-demographic features**:
    - Attributes like `having a partner`, not `a senior citizen`, or `having dependents` show higher survival rates, with `Gender` being the only statistically insignificant factor.
    - Customers `without partners or dependents, and senior citizens`, exhibit lower survival rates, suggesting these groups may need more targeted retention strategies.
-- For product and service features:
+
+- **Survival Function Across Product and Service Features**:
    - The absence of support services such as `OnlineSecurity`, `OnlineBackup`, and `TechSupport` is strongly associated with lower survival rates.
    - Notably, customers using `InternetService | No` show early dropout but maintain a high final survival rate, highlighting potentially different usage intentions or expectations.
    - These findings suggest that bundling essential services or improving onboarding for feature adoption could positively impact retention.
-- Payment-related features reveal the strongest churn predictors:
+
+- **Survival Function Across Product and Payment-Related Features**:
    - Customers on `month-to-month contracts` or those using `Electronic check` or `Mailed check` as payment methods show significantly lower survival rates.
    - In contrast, long-term contract customers, particularly those on `Contract | Two year`, maintain the highest survival rates.
    - These patterns reinforce the protective effect of long-term agreements and automated payment methods on customer retention.
 
+
 ### 3. Hazard Modeling
 - The hazard modeling analysis using the Cox Proportional Hazards model reveals a robust and well-calibrated predictive framework for understanding customer churn risk over time.
-- Best Predictors: `Contract`, `InternetService`, `TotalCharges`, and `TotalCharges (Q)`
-- Model Scores:   
+
+- **Best Predictors**:
+   - `Contract`: coef = 1.578, HR = exp(1.578) = 4.846
+   - `InternetService`: coef = 2.006, HR = exp(2.006) = 7.430
+   - `TotalCharges`: coef = –0.001, HR = exp(–0.001) = 0.999
+   - `TotalCharges (Q)`: coef = –1.787, HR = exp(–1.787) = 0.168
+
+- **Model Scores**:   
    - Concordance Index (C-Index) & C-IndexC (Censored):
       - Train: 0.9565
       - Test: 0.9526
    - Cumulative Dynamic AUC:
       - Train: 0.9788
       - Test: 0.9773 
-   - Notably, both the Concordance Index and cumulative dynamic AUC reached values above 0.95, demonstrating high discriminatory power and strong predictive accuracy throughout the customer tenure period.
-- The feature importance analysis indicates that `contract type` and `internet service type` are the dominant categorical predictors, exerting large, discrete impacts on churn risk.
-   - For instance, transitioning from `a two-year` to `a month-to-month contract` can increase churn risk by over 23 times, while moving from `no internet` to `fiber optic` service may increase the hazard by over 55 times, emphasizing the behavioral sensitivity associated with short-term contracts and high-speed services.
-   - On the continuous side, TotalCharges (both raw and quantile-transformed) shows significant yet smoother effects on churn probability. Specifically, `a one-quantile` increase in `TotalCharges` reduces the hazard by over 83%, while every additional dollar spent reduces churn risk by approximately 0.1%, reinforcing the protective nature of higher spending or longer tenure.
-   - These findings can directly inform targeted retention strategies, such as offering incentives for long-term contracts or interventions for high-risk internet service users.
-- Visual diagnostics further support the model’s validity.
+   - Both the Concordance Index and cumulative dynamic AUC reached values above 0.95, demonstrating high discriminatory power and strong predictive accuracy throughout the customer tenure period.
+
+- **Feature Importance**:
+   - `Contract type` and `internet service type` are the dominant categorical predictors, exerting large, discrete impacts on churn risk.
+      - For instance, transitioning from `a two-year` to `a month-to-month contract` can increase churn risk by over 23 times, while moving from `no internet` to `fiber optic` service may increase the hazard by over 55 times, emphasizing the behavioral sensitivity associated with short-term contracts and high-speed services.
+   - On the continuous side, TotalCharges (both raw and quantile-transformed) shows significant yet smoother effects on churn probability.
+      - Specifically, `a one-quantile` increase in `TotalCharges` reduces the hazard by over 83%, while every additional dollar spent reduces churn risk by approximately 0.1%, reinforcing the protective nature of higher spending or longer tenure.
+   - These findings can directly inform targeted retention strategies, such as offering incentives for long-term contracts or interventions for high-risk internet service customers.
+
+- **Visual Analysis**:
+   - Visual diagnostics further support the model’s validity.
    - The time-dependent ROC curves show consistently high AUC values (~0.95–0.99) up to mid-tenure, with minimal degradation over time and excellent generalization across training and test sets.
    - The partial effects plots clearly illustrate that customers using `fiber optic` services experience far more rapid churn compared to `DSL` or those `without internet service`.
    - Lastly, quartile-based survival functions cleanly stratify risk groups, confirming that the model effectively separates high- and low-risk customers.
