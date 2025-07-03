@@ -38,7 +38,7 @@ The primary goal of this analysis is to understand customer behavior over time a
 ## E. Methodology
 
 
-### a. Exploratory Data Analysis (EDA)
+### 1. Exploratory Data Analysis (EDA)
 1. Visualizing churn composition using a pie chart.
 2. Visualizing churn composition and association (with chi-squared tests) across categorical features using a bar chart grouped by variable and stacked by churn status.
 3. Visualizing churn distribution across tenure using a stacked bar chart.
@@ -47,12 +47,12 @@ The primary goal of this analysis is to understand customer behavior over time a
 6. Visualizing unique combinations of significant categorical features using a parallel categories chart.
 
 
-### b. Survival Function Estimation using the Kaplan-Meier Method (Non-Parametric)
+### 2. Survival Function Estimation using the Kaplan-Meier Method (Non-Parametric)
 1. Visualizing the survival function curve and its confidence interval using a line chart.
 2. Stratify survival curves by categorical variables to compare retention patterns.
 
 
-### c. Hazard Modeling with the Cox Proportional Hazards Model (Semi-Parametric)
+### 3. Hazard Modeling with the Cox Proportional Hazards Model (Semi-Parametric)
 1. **Data Preparation**
    - Drop features whose χ² p-values indicate no significant association with churn.
    - Encode categorical variables using rank-based target mean encoding.
@@ -72,8 +72,7 @@ The primary goal of this analysis is to understand customer behavior over time a
    - Benchmark predictive performance across alternative feature sets.
 6. **Model Selection**
    - Select the best-performing configuration.
-7. **Model Summary**
-8. **Model Visualisation**  
+7. **Model Visualisation**  
    - Plot coefficient bars with 95% CIs.
    - Plot covariate partial effects to show how within-group changes shift the survival curve (line chart).
    - Draw time-dependent ROC curves to illustrate accuracy over time.
@@ -81,9 +80,9 @@ The primary goal of this analysis is to understand customer behavior over time a
    - Overlay predicted vs. observed time-to-event curves to assess calibration.
 
 
-### d. Tools and Libraries
-   - Tools: Python, JupyterLab, Git, GitHub
-   - Python Libraries: lifelines, scikit-survival, scikit-learn, plotly, pandas, numpy, streamlit, scipy
+### 4. Tools and Libraries
+- Tools: Python, JupyterLab, Git, GitHub.
+- Python Libraries: lifelines, scikit-survival, scikit-learn, plotly, pandas, numpy, streamlit, scipy.
 
 
 ## F. Exploratory Data Analysis
