@@ -13,19 +13,19 @@ In this repository, I will conduct survival analysis using Python, utilizing Plo
 
 
 ### 1. Business Goals
-The primary goal of this analysis is to understand customer behavior over time and predict the likelihood of churn. By leveraging survival analysis techniques, businesses can gain insights into customer retention patterns, optimize engagement strategies, and enhance decision-making for long-term value.
+The primary goal of this analysis is to understand customer behavior over time and predict the likelihood of churn. By leveraging survival analysis techniques, businesses can gain insights into customer retention patterns, optimize engagement strategies, and make data-driven decisions to maximize long-term customer value.
 
 
 ### 2. Objective of this analysis
 1. Estimate customer retention over time using survival analysis.
-2. Identify key drivers of churn using hazard modeling.
-3. Provide insights to support data-informed retention strategies.
+2. Identify key drivers of churn through hazard modeling.
+3. Provide actionable insights to inform retention strategies.
 
 
 ### 3. Key Questions to Answer
 1. How long do customers typically stay, and when are they most likely to churn?
 2. What factors most strongly influence churn risk?
-3. How can we use these insights to improve customer retention?
+3. How can these insights be used to improve customer retention?
 
 
 
@@ -523,10 +523,10 @@ Example Covariate: InternetService
    - Recommendation: Promote annual or two-year plans through discounts, loyalty rewards, or early-lock-in benefits to improve customer retention.
 2. Target High-Risk Internet Service Segments
    - Issue: Customers using Fiber Optic services show drastically higher churn risk (up to 55 times) than those without internet service.
-   - Recommendation: Identify dissatisfaction drivers (e.g., pricing, performance expectations) among fiber users. Consider bundling support services, better onboarding, or satisfaction guarantees to mitigate churn.
+   - Recommendation: Identify dissatisfaction drivers (e.g., pricing, performance expectations) among fiber customers. Consider bundling support services, better onboarding, or satisfaction guarantees to mitigate churn.
 3. Strengthen Support Service Adoption
-   - Issue: Users without OnlineSecurity, TechSupport, or OnlineBackup are twice as likely to churn.
-   - Recommendation: Create campaigns that emphasize the value of bundled services, or offer free trials for new users to increase feature adoption.
+   - Issue: Customers without OnlineSecurity, TechSupport, or OnlineBackup are twice as likely to churn.
+   - Recommendation: Create campaigns that emphasize the value of bundled services, or offer free trials for new customers to increase feature adoption.
 4. Segment & Support Vulnerable Demographics
    - Issue: Churn is notably higher among senior citizens, those without partners, and customers without dependents.
    - Recommendation: Tailor customer engagement with personalized communication and support plans, potentially through age-sensitive or household-sensitive retention offers.
@@ -540,7 +540,7 @@ Example Covariate: InternetService
 1. Enhance Hazard Modeling
    - Incorporate Updated Behavioral Data: Continuously retrain the hazard model with the latest customer behavior and interaction data to ensure risk estimates remain current and reflective of evolving patterns.
    - Explore Non-Linear Techniques: Investigate more flexible models (e.g., survival random forests, neural survival models, or gradient-boosted AFT models) to capture complex, non-linear relationships that the Cox model may overlook.
-   - Model Segmentation: Build segmented hazard models for distinct customer groups (e.g., senior citizens, fiber users) to uncover group-specific churn dynamics.
+   - Model Segmentation: Build segmented hazard models for distinct customer groups (e.g., senior citizens, fiber customers) to uncover group-specific churn dynamics.
 
 2. Improve Model Explainability
    - Integrate SHAP or PDP Tools: Leverage SHAP (SHapley Additive exPlanations) or Partial Dependence Plots to provide actionable, feature-level insights into individual churn predictions. This enhances transparency and facilitates stakeholder buy-in.
