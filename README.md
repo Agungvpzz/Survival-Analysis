@@ -354,7 +354,9 @@ The survival model exhibits strong predictive performance with minimal overfitti
     - Test: 0.9711 -> 0.9773
 
 
-### 4. Model Summary:
+### 5. Model Summary
+
+
 <div align=center>
    
    ![image](https://github.com/user-attachments/assets/b1b6d964-eb96-4da0-a0ef-fcccea45f671)
@@ -378,7 +380,7 @@ The survival model exhibits strong predictive performance with minimal overfitti
       - Going from No Internet (0) to Fiber (2) multiplies hazard by exp(2.006  times 2) ≈ 55 times.
 
 
-### 4. Model Visualization
+### 5. Model Visualization
 
 
 #### a. Feature Coefficients
