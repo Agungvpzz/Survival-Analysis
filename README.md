@@ -29,13 +29,13 @@ The primary goal of this analysis is to understand customer behavior over time a
 
 
 
-## D. Data Understanding
+## C. Data Understanding
 - The dataset can be explored and downloaded with the following link [telco-customer-churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn/data).
 - Learn more about the dataset through this link [Legend](https://community.ibm.com/community/user/blogs/steven-macko/2019/07/11/telco-customer-churn-1113)
 
 
 
-## E. Methodology
+## D. Methodology
 
 
 ### 1. Exploratory Data Analysis (EDA)
@@ -85,7 +85,7 @@ The primary goal of this analysis is to understand customer behavior over time a
 - Python Libraries: lifelines, scikit-survival, scikit-learn, plotly, pandas, numpy, streamlit, scipy.
 
 
-## F. Exploratory Data Analysis
+## E. Exploratory Data Analysis
 
 
 ### 1. Churn Composition
@@ -196,7 +196,8 @@ Example Feature: Contract
 - About 42% of customers with a `monthly contract` have churned, with the highest churn rate at 57.7% for those who use `Electronic Check with paperless billing`.
       
 
-## G. Survival Function Estimation using the Kaplan-Meier Method
+
+## F. Survival Function Estimation using the Kaplan-Meier Method
 
 ### 1. Survival Function Curve
 <div align=center>
@@ -312,7 +313,8 @@ Example Feature: Contract
   - `Contract | Two year` shows the highest final survival rate at 93.57%, meanwhile the `Contract | Month-to-month` has the lowest at 12.9%.
 
 
-## H. Hazard Modeling Using Cox Proportional Hazards
+
+## G. Hazard Modeling Using Cox Proportional Hazards
 
 
 ### 1. Model Evaluation
@@ -445,7 +447,7 @@ Example Covariate: InternetService
 
 
 
-## I. Conclusions
+## H. Conclusions
 
 ### 1. Exploratory Data Analysis
 - **Churn Rate**: Approximately 26.5% (1869) of our customers have churned.
@@ -515,7 +517,7 @@ Example Covariate: InternetService
 
 
 
-## J. Recommendations
+## I. Recommendations
 1. Shift Away from Month-to-Month Contracts
    - Issue: Customers on month-to-month contracts are 5 to 23 times more likely to churn compared to those on long-term plans.
    - Recommendation: Promote annual or two-year plans through discounts, loyalty rewards, or early-lock-in benefits to improve customer retention.
@@ -534,7 +536,7 @@ Example Covariate: InternetService
 
 
 
-## K. Next Steps
+## J. Next Steps
 1. Enhance Hazard Modeling
    - Incorporate Updated Behavioral Data: Continuously retrain the hazard model with the latest customer behavior and interaction data to ensure risk estimates remain current and reflective of evolving patterns.
    - Explore Non-Linear Techniques: Investigate more flexible models (e.g., survival random forests, neural survival models, or gradient-boosted AFT models) to capture complex, non-linear relationships that the Cox model may overlook.
