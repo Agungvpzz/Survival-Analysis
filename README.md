@@ -136,7 +136,7 @@ Example Feature: Contract
 - The bar charts clearly illustrate how churn composition varies across customer tenure for each contract type.
 - For `Month-to-month` contracts, the majority of churn occurs within the first year, particularly in the first month. Churn then drops sharply until month six, followed by a steady decline. Very few customers remain active beyond five years.
 - The `One-year` contract displays a relatively uniform distribution of churn across tenure, suggesting consistent retention dynamics throughout the contract period.
-- The `Two-year` contract displays a higher proportion of long-term customers, many of whom have remained active for over five years. This suggests strong loyalty among existing subscribers. However, the lower presence of newer users on this contract type may indicate a shift in preference toward more flexible, short-term plans, potentially challenging future retention.
+- The `Two-year` contract shows a higher proportion of long-term customers, although this concentration only becomes apparent after year 5. This suggests strong loyalty among existing subscribers. However, the sharp drop in newer customers on this contract type, particularly after the first three months of engagement, may signal a shift in preference toward more flexible, short-term plans, potentially posing challenges for future retention.
 
 
 ### 5. Pearson Correlation Coefficient Between Churn and each Feature
